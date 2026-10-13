@@ -8,7 +8,6 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Liu-2026/AIBoot/actions/workflows/validate.yml"><img src="https://github.com/Liu-2026/AIBoot/actions/workflows/validate.yml/badge.svg" alt="来源检查"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-2f855a" alt="MIT 许可证"></a>
   <a href="docs/setup.md"><img src="https://img.shields.io/badge/version-v0.2.0--alpha.4-2563eb" alt="v0.2.0-alpha.4"></a>
 </p>
@@ -120,7 +119,6 @@ scaffold/AGENTS.md            # 核心工程指导
 scaffold/capabilities.md      # 可选的专项能力参考
 adapters/                    # 各开发工具的原生加载说明
 docs/setup.md                # 接入、迁移、更新与移除
-docs/validation.md           # 工程验证记录
 docs/assets/aiboot-hero.png   # 项目主视觉
 ```
 
@@ -132,9 +130,8 @@ AIBoot 工作在指令层。技术栈、业务目录、测试、CI 与现有文�
 AIBoot 采用 **MIT 开源许可**。欢迎分享你的工作流与实际案例、完善能力路线，
 或让工程指导更清晰、更好用。
 
-- [贡献指南](CONTRIBUTING.md) — Git 工作方式与本地检查。
+- [贡献指南](CONTRIBUTING.md) — Git 工作方式与贡献说明。
 - [接入指南](docs/setup.md) — 接入方式与项目生命周期。
-- [工程记录](docs/validation.md) — 验证范围与实际观察。
 - [Issues](https://github.com/Liu-2026/AIBoot/issues) — 建议、反馈与实用案例。
 
 **喜欢这套思路？为 AIBoot 点一颗 Star，让更多开发者把想法做成好项目。**

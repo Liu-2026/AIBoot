@@ -14,8 +14,6 @@ remain native Codex capabilities.
 Status: official documentation checked on 2026-10-13. Local Codex CLI
 `0.162.0-alpha.17.2` input previews confirmed the complete core appears once after
 copying and is absent before copying and after removal. These previews did not run
-a model. A separate scoped local behavior trial is described in
-[the validation notes](../../docs/validation.md); remote/cloud support
-and broader behavior remain untested.
+a model; remote/cloud support and broader behavior have separate validation scopes.
 
 Source: [Codex project instructions](https://learn.chatgpt.com/docs/agent-configuration/agents-md).

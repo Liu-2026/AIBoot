@@ -28,19 +28,21 @@ against `main`. Existing commit messages use a short type and purpose, such as
 
 ## Check the repository
 
-Python 3.9+ is needed only for maintainer checks, not to use AIBoot:
+Review changed local links, image references, loading instructions, and the
+documented copy commands. Keep the English and Chinese READMEs aligned.
 
 ```sh
-python3 scripts/check.py
-python3 -m unittest discover -s tests
 git diff --check
 ```
 
-The checker covers local Markdown links, image references, and source-file
-structure. Tests cover the checker and documented core copy guard in temporary
-directories. These checks do not demonstrate useful agent behavior. For comparisons,
-use fresh independent sessions with identical task inputs and tools; keep evaluator notes
-out of the executing agent's context. Report actual results, including not-run checks.
+For loading changes, check the affected native entry and preserve existing project
+instructions. For behavior comparisons, use fresh independent sessions with
+identical task inputs and tools; keep evaluator notes out of the executing agent's
+context. Report the checks actually performed and their results.
+
+The public kit contains the scaffold and its usage documentation. Keep internal
+planning, maintainer scripts, test fixtures, and validation records local and
+ignored. AIBoot uses the host coding tool's native capabilities.
 
 Do not add a runtime, installation service, external account, or model evaluation
 runner without a demonstrated need. Keep raw run outputs and credentials out of

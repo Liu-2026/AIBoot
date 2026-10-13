@@ -8,7 +8,6 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/Liu-2026/AIBoot/actions/workflows/validate.yml"><img src="https://github.com/Liu-2026/AIBoot/actions/workflows/validate.yml/badge.svg" alt="Source checks"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-2f855a" alt="MIT License"></a>
   <a href="docs/setup.md"><img src="https://img.shields.io/badge/version-v0.2.0--alpha.4-2563eb" alt="v0.2.0-alpha.4"></a>
 </p>
@@ -138,7 +137,6 @@ scaffold/AGENTS.md            # core engineering guidance
 scaffold/capabilities.md      # optional task-specific capability reference
 adapters/                    # native loading guides for each tool
 docs/setup.md                # setup, migration, updates, and removal
-docs/validation.md           # engineering validation notes
 docs/assets/aiboot-hero.png   # project artwork
 ```
 
@@ -151,9 +149,8 @@ execution; the core supplies a shared engineering approach.
 AIBoot is **open source under MIT**. Bring your workflow, share a practical use
 case, improve a capability route, or help make the guidance clearer.
 
-- [Contributing](CONTRIBUTING.md) — Git workflow and local checks.
+- [Contributing](CONTRIBUTING.md) — Git workflow and contribution guidance.
 - [Setup guide](docs/setup.md) — installation and project lifecycle.
-- [Engineering notes](docs/validation.md) — validation scope and observations.
 - [Issues](https://github.com/Liu-2026/AIBoot/issues) — ideas, feedback, and useful examples.
 
 **Like the approach? Give AIBoot a Star and help more developers build with intent.**

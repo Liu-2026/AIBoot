@@ -19,9 +19,16 @@ __pycache__/
 tmp/
 
 # Local planning, design, evaluation, and repository preparation
+# Root-only maintainer guidance; scaffold/AGENTS.md is distributed and tracked.
 /AGENTS.md
 /docs/design.md
 /docs/development-plan.md
 /docs/repository.md
 /docs/assets/README.md
 /evals/
+
+# Local maintainer checks and validation records (not part of the scaffold)
+/scripts/
+/tests/
+/docs/validation.md
+/.github/workflows/validate.yml
