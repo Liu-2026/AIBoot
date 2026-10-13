@@ -1,4 +1,4 @@
-<!-- AIBoot optional reference | v0.2.0-alpha.5 | MIT | Experimental -->
+<!-- AIBoot optional reference | v0.2.0-alpha.6 | MIT | Experimental -->
 # Find a capability for the task
 
 Consult this reference when a task needs a specialized capability, existing methods
@@ -33,7 +33,7 @@ installation methods can change; verify the selected item when using it.
    publisher reputation, and directory audits are discovery signals; none proves
    effectiveness or compatibility in this project. A broad workflow, required
    reports, hooks, or extra agents may cost more than the problem warrants.
-4. Choose the smallest useful addition. A **Skill** supplies instructions and may
+4. Choose an addition that meets the actual need. A **Skill** supplies instructions and may
    include scripts; an **MCP tool** exposes an executable service; a **plugin** can
    bundle both with hooks and configuration. Use a connected tool directly when
    it suffices. For a one-off need, prefer supported session use or a reference
@@ -50,6 +50,9 @@ installation methods can change; verify the selected item when using it.
    relevant upstream changes when updating; no recurring catalog scan or claimed
    Token saving is required.
 
+Judge selection by task fit and delivery quality, alongside setup and maintenance
+cost. Necessary analysis, design, documentation, and verification are part of
+successful delivery, not a reason by themselves to reject a useful capability.
 Upstream workflow requirements count toward selection cost. Once invoked, follow
 applicable instructions under the host's instruction hierarchy; this index does
 not override a skill or promise to trim its mandatory work. Reference content is
@@ -68,8 +71,9 @@ assuming a new installation is needed. Retry when a corrected input or a plausib
 transient condition provides a reason; repeated failures without new evidence
 call for a fallback or a truthful blocker. Prefer a working alternative that
 supplies the necessary evidence; separate repairing a preferred tool from delivering
-the requested result unless that repair is essential. Use the smallest relevant
-checks and retain applicable evidence. Inspect only task-relevant settings, preserve
+the requested result unless that repair is essential. Cover required behavior and
+relevant failure impact, retaining applicable evidence; do not lower acceptance
+because a tool failed. Inspect only task-relevant settings, preserve
 existing connections, and keep credentials out of prompts and logs.
 
 If the task requires inaccessible private data or a specific service operation,

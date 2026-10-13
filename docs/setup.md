@@ -2,7 +2,7 @@
 
 [English overview](../README.md) · [中文概览](../README.zh-CN.md)
 
-The kit is `v0.2.0-alpha.5`: one default English core, loaded by your coding tool.
+The kit is `v0.2.0-alpha.6`: one default English core, loaded by your coding tool.
 Existing project conventions, native plans, checks, and appropriate installed
 Skills continue to supply the rest of the workflow.
 
@@ -43,13 +43,52 @@ would otherwise lose them. No prescribed facts template or extra task ledger is
 needed. When redistributing AIBoot content, retain its MIT notice in existing
 third-party notices or a copy of [LICENSE](../LICENSE), preserving your own license.
 
+## Follow the development workflow
+
+The core prioritizes a correct, usable, maintainable outcome. Spend the effort
+needed for analysis, documentation, design, implementation, and verification.
+Reduce duplication and irrelevant work while preserving agreed scope and quality.
+
+For a new project or substantial feature, establish users, workflows, business
+rules, scope, constraints, and acceptance examples. Investigate existing solutions
+and suitable capabilities. Explain consequential choices, relevant module/data
+boundaries, and interfaces before implementing work that depends on them.
+
+Keep an actionable plan for multi-step work: milestones, task dependencies,
+completion evidence, and current status. A durable project brief and significant
+decisions belong in existing plans, issues, or documents; one shared entry can
+contain them. When a suitable entry is missing, create it in the normal project
+location. Expand records as the project's decisions and coordination need grow.
+The core specifies needed information rather than a fixed document bundle.
+
+Build connected units and check their integration. Distinguish planned,
+in-progress, implemented-but-unverified, verified, and blocked work. Review the
+actual changes and verify affected business rules, important boundary/failure
+cases, and relevant integrations. Choose checks from the result and impact;
+use actual runtime, browser, or service evidence when those behaviors matter.
+An unavailable tool calls for a sufficient alternative or an explicit blocker,
+not a weaker acceptance condition.
+
+Before delivery, check the requested scope, setup/run instructions, and required
+configuration, migration, or deployment steps. A first working slice is a
+milestone; continue the remaining authorized work unless the user requested that
+milestone or prototype as the whole deliverable. Keep ongoing operating and
+maintenance needs visible when the product requires them.
+
+For example, a small booking application can use the existing server and a
+maintained framework while still checking appointment conflicts, relevant access
+rules, persistence, and usable setup. A change spanning existing modules can
+require interface decisions, dependency sequencing, broader regression checks,
+and a migration/rollback plan. Routine help-text edits use established context
+and relevant checks without repeating project design.
+
 ## Continue work across sessions
 
-The core includes continuity guidance. Use native recovery and existing durable
-plans, issues, or project documents when they contain enough information to
-continue. If future sessions or collaborators would otherwise lose necessary
-state and no suitable entry exists, keep one short status note in the project's
-normal document location. There is no required filename or document bundle.
+Multi-stage projects need durable goals, significant decisions, an actionable
+plan, and current progress. Use native recovery alongside existing plans, issues,
+or project documents. If no suitable durable entry exists, keep one concise
+project note in the normal document location. There is no required filename or
+document bundle; sufficient existing records need no duplicate ledger.
 
 Keep the current goal, verified results and evidence links, unfinished work,
 blockers, next action, and consequential constraints or decision references.

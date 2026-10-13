@@ -1,8 +1,9 @@
 # Contributing to AIBoot
 
-Useful contributions make agent decisions better without adding unnecessary
-context or process. Real examples, narrower triggers, clearer setup, and removing
-unhelpful guidance are all welcome.
+Useful contributions improve correct, usable, maintainable delivery. Necessary
+analysis, design, documentation, and verification take priority over context or
+process savings. Real examples, effective workflow guidance, clearer setup, and
+removing duplicate or irrelevant work are all welcome.
 
 ## A small, reviewable change
 

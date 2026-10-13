@@ -9,7 +9,7 @@
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-2f855a" alt="MIT License"></a>
-  <a href="docs/setup.md"><img src="https://img.shields.io/badge/version-v0.2.0--alpha.5-2563eb" alt="v0.2.0-alpha.5"></a>
+  <a href="docs/setup.md"><img src="https://img.shields.io/badge/version-v0.2.0--alpha.6-2563eb" alt="v0.2.0-alpha.6"></a>
 </p>
 
 <p align="center">
@@ -25,7 +25,8 @@
 
 AIBoot brings practical engineering guidance to **Codex, Cursor, and Claude Code**.
 It helps your agent clarify the goal, choose proven building blocks, plan the next
-useful step, and deliver with relevant verification.
+useful step, and deliver with relevant verification. **Project outcomes come first:**
+analysis, design, documentation, and testing follow what successful delivery needs.
 
 **One core file. Your favorite tools. Your own stack.** Add AIBoot to your project's
 native instruction entry and describe what you want to build. Its English guidance
@@ -85,9 +86,10 @@ Choose your tool's loading guide:
 
 ```text
 Build a small booking app for our team.
-Start with the simplest useful booking flow.
-Consider suitable existing libraries and native Skills or tools.
-Implement the first working result and show how you verified it.
+Staff should view, create, and cancel room bookings; prevent overlapping bookings.
+Consider suitable existing solutions, libraries, and native Skills or tools.
+Plan the work, then implement the agreed scope in verified steps.
+Provide usable run instructions and evidence of the completed result.
 ```
 
 For research and planning, add “plan only; do not implement yet.” To continue an
@@ -98,13 +100,29 @@ existing project, describe the next result and point to the current project fact
 **A clear next step, even when the session or collaborator changes.**
 
 AIBoot guides the agent to use native recovery and existing plans, issues, or
-project documents. When essential state needs a durable home, it helps keep a
-short status note with the goal, verified results, remaining work, blockers,
-next action, and key decision references.
+project documents. Multi-stage work keeps durable goals, decisions, plans, and
+progress; a concise shared note can hold the goal, verified results, remaining
+work, blockers, next action, and key decision references.
 
 Updates follow meaningful milestones and handoffs. Resumed work checks current
 files and applicable evidence, while development conventions grow from your
 stack and team agreements. [See the continuity guide](docs/setup.md#continue-work-across-sessions).
+
+## A workflow from idea to delivery
+
+The core guides substantial work through six connected decisions:
+
+1. **Define the outcome:** users, workflows, scope, constraints, and acceptance examples.
+2. **Investigate and choose:** existing solutions, dependencies, native capabilities, and consequential tradeoffs.
+3. **Design and plan:** module boundaries, interfaces, data, milestones, task dependencies, and completion evidence.
+4. **Build and integrate:** reviewable working units, explicit progress, and integration with the project.
+5. **Verify and review:** relevant business behavior, boundary cases, integrations, and the actual changes.
+6. **Deliver and continue:** usable setup, verified results, remaining work, and the next milestone.
+
+A first working slice advances the full project goal. Multi-stage projects keep a
+durable brief, decisions, plan, and progress in suitable existing records; a shared
+entry can hold them together. Routine edits use established context and focused
+checks. [Explore the workflow guide](docs/setup.md#follow-the-development-workflow).
 
 ## The right capability for the task
 

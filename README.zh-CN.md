@@ -9,7 +9,7 @@
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-2f855a" alt="MIT 许可证"></a>
-  <a href="docs/setup.md"><img src="https://img.shields.io/badge/version-v0.2.0--alpha.5-2563eb" alt="v0.2.0-alpha.5"></a>
+  <a href="docs/setup.md"><img src="https://img.shields.io/badge/version-v0.2.0--alpha.6-2563eb" alt="v0.2.0-alpha.6"></a>
 </p>
 
 <p align="center">
@@ -25,6 +25,7 @@
 
 AIBoot 为 **Codex、Cursor、Claude Code** 带来实用的工程开发指导：帮助 AI 理清目标、
 选择成熟方案、规划下一步，并通过与任务相关的验证完成交付。
+**开发结果优先：** 分析、设计、文档与测试的投入，由成功交付所需的工作决定。
 
 **一份核心文件，沿用你喜欢的工具和技术栈。** 将 AIBoot 加入项目的原生指令入口，
 然后描述你想完成的事情。英文核心指导与开发工具的规划、Skills、MCP 集成、
@@ -76,9 +77,10 @@ Windows 用户可以手动复制同一个文件。详见[接入指南](docs/setu
 
 ```text
 Build a small booking app for our team.
-Start with the simplest useful booking flow.
-Consider suitable existing libraries and native Skills or tools.
-Implement the first working result and show how you verified it.
+Staff should view, create, and cancel room bookings; prevent overlapping bookings.
+Consider suitable existing solutions, libraries, and native Skills or tools.
+Plan the work, then implement the agreed scope in verified steps.
+Provide usable run instructions and evidence of the completed result.
 ```
 
 研究与规划阶段，补充 “plan only; do not implement yet”。接续已有项目时，
@@ -89,11 +91,26 @@ Implement the first working result and show how you verified it.
 **更换会话或协作者，仍然知道下一步做什么。**
 
 AIBoot 指导 AI 使用原生恢复能力与已有计划、Issue 或项目文档。
-关键状态需要持久保存时，保留一份简短记录，涵盖目标、已验证成果、未完成事项、
-阻塞、下一步和关键决策引用。
+多阶段工作保留持久的目标、决策、计划与进度；一份简明的共享记录可以涵盖目标、
+已验证成果、未完成事项、阻塞、下一步和关键决策引用。
 
 记录随里程碑与交接更新；接续开发时，核对实际文件状态与仍然适用的验证证据。
 开发约定则从技术栈和团队共识中逐步形成。[查看连续开发说明](docs/setup.md#continue-work-across-sessions)。
+
+## 从想法到交付的开发流程
+
+核心指导将实质开发工作串联为六个环节：
+
+1. **明确结果：** 用户、业务流程、范围、约束与可观察的验收示例。
+2. **研究选型：** 已有方案、依赖、原生能力与重要取舍。
+3. **设计规划：** 模块边界、接口、数据、里程碑、任务依赖与完成证据。
+4. **实现集成：** 可审查的工作单元、明确进度与项目内的实际集成。
+5. **验证审查：** 相关业务行为、边界条件、集成结果与代码变更。
+6. **交付接续：** 可用的运行方式、已验证成果、剩余工作与下一阶段。
+
+首个可用成果推动完整项目目标继续实现。多阶段项目将需求概要、重要决策、计划与进度
+保存在适合的已有记录中，可以共用一个入口；普通修改沿用已有上下文与相关检查。
+[查看开发流程说明](docs/setup.md#follow-the-development-workflow)。
 
 ## 让合适的能力出现在合适的任务中
 
