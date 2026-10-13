@@ -9,7 +9,7 @@
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-2f855a" alt="MIT 许可证"></a>
-  <a href="docs/setup.md"><img src="https://img.shields.io/badge/version-v0.2.0--alpha.7-2563eb" alt="v0.2.0-alpha.7"></a>
+  <a href="docs/setup.md"><img src="https://img.shields.io/badge/version-v0.2.0--alpha.8-2563eb" alt="v0.2.0-alpha.8"></a>
 </p>
 
 <p align="center">
@@ -27,7 +27,7 @@ AIBoot 为 **Codex、Cursor、Claude Code** 提供一套共享的工程开发方
 研究成熟方案、选择架构、规划任务、实现集成，再完成可用交付。
 从项目起步到跨会话开发和后续维护，给 AI 一条贯穿项目生命周期的工作路径。
 
-**一份核心文件，沿用你喜欢的工具和技术栈。** 将英文核心指导加入项目的原生指令入口，
+**共享工程核心，配合专项能力路线，沿用你的技术栈。** 将英文核心指导加入项目的原生指令入口，
 然后描述你想完成的结果。开发工具提供执行、规划、Skills、MCP 连接、会话恢复和允许的协作；
 AIBoot 将这些能力与实际工程决策衔接起来。
 
@@ -55,38 +55,112 @@ AIBoot 将这些能力与实际工程决策衔接起来。
 接入已有软件时，打开它当前的项目根目录。
 AIBoot 提供工程指导，业务工程的结构由选定技术栈、适用脚手架和项目实际需要决定。
 
-### 2. 加入核心指导
+### 2. 按工具方式拉取推荐完整方案
 
-**最直接的方式：** [下载核心文件](https://raw.githubusercontent.com/Liu-2026/AIBoot/main/scaffold/AGENTS.md)，
-将内容保存为**你自己项目根目录中的 `AGENTS.md`**。
-已有同名文件时，在编辑器中合并适用指导，保留项目原来的开发约定。
+**在自己的项目中使用 AIBoot：** 直接拉取核心指导与能力参考。
+核心已经包含参考文件入口，指导 AI 在专项任务中按需读取选择指导和匹配章节。
 
-想获取全部参考资料，可以运行
-`git clone https://github.com/Liu-2026/AIBoot.git`，或
-[下载 ZIP](https://github.com/Liu-2026/AIBoot/archive/refs/heads/main.zip)。
-然后在 macOS/Linux 的目标项目目录中执行以下命令，并替换来源路径：
+在**目标项目根目录**中执行下面对应平台的命令。只获取两份指导文件及 MIT 声明，
+无需 Clone 整个仓库，也不安装运行时、第三方 Skills 或 MCP 服务。
 
-```sh
-AIBOOT_SOURCE="/absolute/path/to/AIBoot"
-test ! -e AGENTS.md && test ! -L AGENTS.md && \
-  cp "$AIBOOT_SOURCE/scaffold/AGENTS.md" AGENTS.md
+<details open>
+<summary><strong>macOS / Linux — 直接下载</strong></summary>
+
+```bash
+(
+  set -eu
+  AIBOOT_REF="main" # Or an exact commit for reproducible setup.
+  AIBOOT_BASE="https://raw.githubusercontent.com/Liu-2026/AIBoot/$AIBOOT_REF"
+  for AIBOOT_TARGET in AGENTS.md docs/aiboot-capabilities.md docs/aiboot-LICENSE; do
+    if [ -e "$AIBOOT_TARGET" ] || [ -L "$AIBOOT_TARGET" ]; then
+      printf 'Already exists; merge manually: %s\n' "$AIBOOT_TARGET" >&2
+      exit 1
+    fi
+  done
+  AIBOOT_TMP=$(mktemp -d)
+  trap 'rm -rf "$AIBOOT_TMP"' 0
+  curl -fSL "$AIBOOT_BASE/scaffold/AGENTS.md" -o "$AIBOOT_TMP/AGENTS.md"
+  curl -fSL "$AIBOOT_BASE/scaffold/capabilities.md" -o "$AIBOOT_TMP/capabilities.md"
+  curl -fSL "$AIBOOT_BASE/LICENSE" -o "$AIBOOT_TMP/LICENSE"
+  mkdir -p docs
+  (set -C; cat "$AIBOOT_TMP/AGENTS.md" > AGENTS.md)
+  (set -C; cat "$AIBOOT_TMP/capabilities.md" > docs/aiboot-capabilities.md)
+  (set -C; cat "$AIBOOT_TMP/LICENSE" > docs/aiboot-LICENSE)
+)
 ```
 
-该命令会保留已有文件或符号链接；如果未复制，在编辑器中合并。
-Windows 用户可以通过文件管理器，将 `AIBoot\scaffold\AGENTS.md` 复制到自己的项目根目录；
-目标已有规范时先合并。再分发 AIBoot 内容时保留其 [MIT 声明](LICENSE)，产品自身许可继续保留。
+</details>
 
-最小目标目录如下：
+<details>
+<summary><strong>Windows — PowerShell 直接下载</strong></summary>
+
+```powershell
+& {
+  $ErrorActionPreference = 'Stop'
+  $aibootRef = 'main' # Or an exact commit for reproducible setup.
+  $aibootBase = "https://raw.githubusercontent.com/Liu-2026/AIBoot/$aibootRef"
+  $aibootFiles = @(
+    @{ Source = 'scaffold/AGENTS.md'; Target = 'AGENTS.md' },
+    @{ Source = 'scaffold/capabilities.md'; Target = 'docs/aiboot-capabilities.md' },
+    @{ Source = 'LICENSE'; Target = 'docs/aiboot-LICENSE' }
+  )
+  foreach ($aibootFile in $aibootFiles) {
+    if (Get-Item -LiteralPath $aibootFile.Target -Force -ErrorAction SilentlyContinue) {
+      throw "Already exists; merge manually: $($aibootFile.Target)"
+    }
+  }
+  $aibootTemp = Join-Path ([IO.Path]::GetTempPath()) ([Guid]::NewGuid().ToString())
+  New-Item -ItemType Directory -Path $aibootTemp | Out-Null
+  try {
+    foreach ($aibootFile in $aibootFiles) {
+      $aibootStaged = Join-Path $aibootTemp ([IO.Path]::GetFileName($aibootFile.Target))
+      Invoke-WebRequest -Uri "$aibootBase/$($aibootFile.Source)" -OutFile $aibootStaged
+    }
+    New-Item -ItemType Directory -Path 'docs' -Force | Out-Null
+    foreach ($aibootFile in $aibootFiles) {
+      $aibootStaged = Join-Path $aibootTemp ([IO.Path]::GetFileName($aibootFile.Target))
+      [IO.File]::Copy($aibootStaged, [IO.Path]::GetFullPath($aibootFile.Target), $false)
+    }
+  } finally {
+    Remove-Item -LiteralPath $aibootTemp -Recurse -Force
+  }
+}
+```
+
+</details>
+
+两个示例都会先暂存全部下载，再写入目标，并保留已有目标文件。
+目标路径已占用时，采用下面的手动方式审阅合并。
+不会修改产品的 Git 远程地址、历史、工具配置或自身许可。
+需要固定来源版本时，将命令中的 `main` 替换为具体提交。
+
+**手动下载或接入已有项目：** 获取
+[核心文件](https://raw.githubusercontent.com/Liu-2026/AIBoot/main/scaffold/AGENTS.md)、
+[能力参考](https://raw.githubusercontent.com/Liu-2026/AIBoot/main/scaffold/capabilities.md)
+和 [MIT 声明](https://raw.githubusercontent.com/Liu-2026/AIBoot/main/LICENSE)，
+保存或合并到以下路径，保留项目已有约定：
 
 ```text
 MyProject/
-├── AGENTS.md          # AIBoot 指导 + 你的项目约定
-├── .git/              # 产品自己的 Git 历史
-└── ...                # 按选定技术栈创建的业务文件
+├── AGENTS.md                    # 核心指导 + 你的项目约定
+├── docs/
+│   ├── aiboot-capabilities.md    # 专项能力路线，按需读取
+│   └── aiboot-LICENSE            # 所复制 AIBoot 内容的 MIT 声明
+└── ...                          # 产品代码及自己的 Git 历史
 ```
 
-Clone AIBoot 得到的是来源套件，分发核心位于 `scaffold/`。
-开发自己的应用时，将它复制或合并到目标项目的原生入口；参与 AIBoot 本身开发时，使用 AIBoot 仓库。
+核心已将专项任务指向 `docs/aiboot-capabilities.md`。
+使用其他位置，或将内容合并到旧版入口时，按
+[能力接入说明](docs/setup.md#capability-discovery)填写真实路径。
+
+**简易接入：** 核心指导已经足够时，可以只复制 `AGENTS.md`。
+其中的能力触发规则和公共来源仍然可用；需要更完整的任务指导时，推荐上面的双文件方案。
+
+**参与贡献或研究来源：** 运行
+`git clone https://github.com/Liu-2026/AIBoot.git`，或
+[下载 ZIP](https://github.com/Liu-2026/AIBoot/archive/refs/heads/main.zip)。
+Clone 用于获取来源套件；开发自己的应用时使用独立项目目录。
+[查看本地复制方式](docs/setup.md#inspect-and-add-the-core)。
 
 ### 3. 在目标项目中打开开发工具
 
@@ -223,19 +297,15 @@ Report remaining, blocked, deferred, and unverified work accurately.
 私有集成使用组织来源。安装、加载、连接、权限和执行由开发工具管理。
 AIBoot 提供选择与失败处理指导；复制参考文件本身不会连接服务或安装第三方 Skills。
 
-### 接入可选能力参考
+### 使用完整方案中的能力参考
 
-默认核心已经包含发现指导。需要十类精选路线时，将 `scaffold/capabilities.md`
-复制到适合的位置，例如 `docs/aiboot-capabilities.md`；目标已有文件时先合并。
-然后在实际生效的项目指令入口中加入这个普通指针：
+推荐接入的 `docs/aiboot-capabilities.md` 提供十类精选路线，以及选择和失败处理指导。
+专项任务出现时，核心指导 AI 阅读对应章节；优先使用适用的已安装 Skills 与已连接工具。
+普通编辑和已经解决的选择无需反复阅读清单。
 
-```text
-When a task needs a specialized capability or existing methods leave a useful gap,
-consult the matching section of docs/aiboot-capabilities.md on demand.
-```
-
-保持按需阅读。[能力接入说明](docs/setup.md#optional-capability-discovery)
-提供带保护的复制命令，以及选择和访问指导。
+使用其他存放位置时，在实际生效的指令入口记录真实路径。
+参考保持按需读取；Claude 的 `@` 导入会将其作为指令加载。
+[能力接入说明](docs/setup.md#capability-discovery)。
 
 ## 在项目中更新 AIBoot
 
@@ -244,14 +314,14 @@ consult the matching section of docs/aiboot-capabilities.md on demand.
 3. 在正常 Git 变更说明中记录来源版本或提交。
 4. 刷新工具的项目会话，查看实际生效的指令入口。
 
-可选参考采用相同方式更新。移除 AIBoot 时，移除可辨认的指导或导入，保留有用的项目事实与本地修改。
+配套能力参考采用相同方式审阅更新。移除 AIBoot 时，移除可辨认的指导或导入，保留有用的项目事实与本地修改。
 [更新与移除说明](docs/setup.md#update-and-remove)。
 
 ## 套件内容
 
 ```text
 scaffold/AGENTS.md            # 共享工程开发方法
-scaffold/capabilities.md      # 可选专项能力路线
+scaffold/capabilities.md      # 推荐专项能力路线，按需读取
 adapters/                    # 原生加载说明
 docs/setup.md                # 详细接入与生命周期指南
 docs/prompts.md              # 规划、实施、续接和交付提示词

@@ -1,4 +1,4 @@
-<!-- AIBoot core | v0.2.0-alpha.7 | MIT | Experimental -->
+<!-- AIBoot core | v0.2.0-alpha.8 | MIT | Experimental -->
 # Engineering guidance
 
 Prioritize a correct, usable, maintainable result within the user's requested
@@ -131,6 +131,13 @@ to host-visible skill/tool descriptions even when you could implement it unaided
 Load suitable guidance. Ordinary edits, restarts, and settled choices need no
 renewed discovery.
 
+The recommended setup includes `docs/aiboot-capabilities.md`. At these triggers,
+if that file or the project's recorded alternative is available, read its selection
+guidance and matching section before choosing an approach. Read relevant sections
+on demand, not the whole catalog at every task. Prefer suitable installed Skills
+and connected tools. If the reference is absent, continue with the core's routes
+and native discovery; do not repeatedly search for a missing optional file.
+
 - Actual UI design or refinement: use users, content, references, and existing visual conventions with a suitable design method, such as [Impeccable](https://github.com/pbakaus/impeccable).
 - SDK/API integration, migration, or version uncertainty: use a connected documentation tool, such as [Context7](https://github.com/upstash/context7), or official versioned docs.
 - External service or private data: use a suitable connected integration; otherwise consult native plugin/MCP discovery, publisher documentation, or known organization sources.
@@ -140,8 +147,8 @@ Prefer installed skills, connected tools, and sufficient project methods. When
 these leave a useful gap, use native discovery or focused publisher search.
 [skills.sh](https://skills.sh/) provides Skill candidates;
 the [MCP Registry](https://modelcontextprotocol.io/registry/about) provides public
-server metadata, not private integrations. Optional project references can help;
-none is required. Stop discovery once the capability need is resolved.
+server metadata, not private integrations. Stop discovery once the capability
+need is resolved.
 
 Review workflow fit, dependencies, license, and setup effects before adding through
 the host within existing authorization, preferring project scope. Availability

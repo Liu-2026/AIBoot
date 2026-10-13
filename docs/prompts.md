@@ -87,7 +87,9 @@ work, and the delivery report should reflect the resulting evidence status.
 ## Use a specialized capability
 
 Describe the actual UI, SDK, database, artifact, or service task. The default core
-already contains capability triggers and discovery entry points. For more detail,
-give the agent the relevant section of [the optional reference](../scaffold/capabilities.md)
-using [the optional setup](setup.md#optional-capability-discovery).
+already contains capability triggers and discovery entry points. The recommended
+paired setup gives the agent
+[the capability reference](../scaffold/capabilities.md) through the core’s
+task-triggered pointer. Read relevant sections using
+[the capability setup](setup.md#capability-discovery); core-only setup remains available.
 The host handles availability, loading, connection, and authorization.

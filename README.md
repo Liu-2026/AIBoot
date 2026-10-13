@@ -9,7 +9,7 @@
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-2f855a" alt="MIT License"></a>
-  <a href="docs/setup.md"><img src="https://img.shields.io/badge/version-v0.2.0--alpha.7-2563eb" alt="v0.2.0-alpha.7"></a>
+  <a href="docs/setup.md"><img src="https://img.shields.io/badge/version-v0.2.0--alpha.8-2563eb" alt="v0.2.0-alpha.8"></a>
 </p>
 
 <p align="center">
@@ -28,7 +28,7 @@ clarify requirements, research proven solutions, choose architecture, plan the
 work, build integrated features, and prepare a usable delivery. It gives your
 agent guidance for the whole journey, including future sessions and maintenance.
 
-**One core file. Your favorite tools. Your own stack.** Add the English guidance
+**A shared core. Focused capability routes. Your own stack.** Add the English guidance
 to your project's native instruction entry, then describe the outcome you want.
 Your coding tool provides execution, planning, Skills, MCP connections, session
 recovery, and permitted collaboration. AIBoot connects those capabilities to
@@ -67,41 +67,115 @@ with `git init`. For existing software, open its current project root.
 AIBoot supplies engineering guidance; the application's structure comes from the
 chosen stack, an appropriate starter, and the project's needs.
 
-### 2. Add the core guidance
+### 2. Pull the recommended complete kit
 
-**The simplest route:** [download the core file](https://raw.githubusercontent.com/Liu-2026/AIBoot/main/scaffold/AGENTS.md)
-and save it as **`AGENTS.md` in your project root**. If that file already exists,
-merge the applicable guidance in your editor, preserving project conventions.
+**Use AIBoot as a tool in your own project:** pull the core guidance and capability
+reference directly. The core includes its path and guides specialized tasks to
+read the selection guidance and matching section on demand.
 
-To obtain all reference material, run
-`git clone https://github.com/Liu-2026/AIBoot.git`, or
-[download the ZIP](https://github.com/Liu-2026/AIBoot/archive/refs/heads/main.zip).
-Then run this in the destination project on macOS/Linux, replacing the source path:
+Run one of the following snippets **in your destination project root**. It downloads
+only two guidance files plus the MIT notice, without cloning the repository or
+installing a runtime, third-party Skills, or MCP services.
 
-```sh
-AIBOOT_SOURCE="/absolute/path/to/AIBoot"
-test ! -e AGENTS.md && test ! -L AGENTS.md && \
-  cp "$AIBOOT_SOURCE/scaffold/AGENTS.md" AGENTS.md
+<details open>
+<summary><strong>macOS / Linux — direct download</strong></summary>
+
+```bash
+(
+  set -eu
+  AIBOOT_REF="main" # Or an exact commit for reproducible setup.
+  AIBOOT_BASE="https://raw.githubusercontent.com/Liu-2026/AIBoot/$AIBOOT_REF"
+  for AIBOOT_TARGET in AGENTS.md docs/aiboot-capabilities.md docs/aiboot-LICENSE; do
+    if [ -e "$AIBOOT_TARGET" ] || [ -L "$AIBOOT_TARGET" ]; then
+      printf 'Already exists; merge manually: %s\n' "$AIBOOT_TARGET" >&2
+      exit 1
+    fi
+  done
+  AIBOOT_TMP=$(mktemp -d)
+  trap 'rm -rf "$AIBOOT_TMP"' 0
+  curl -fSL "$AIBOOT_BASE/scaffold/AGENTS.md" -o "$AIBOOT_TMP/AGENTS.md"
+  curl -fSL "$AIBOOT_BASE/scaffold/capabilities.md" -o "$AIBOOT_TMP/capabilities.md"
+  curl -fSL "$AIBOOT_BASE/LICENSE" -o "$AIBOOT_TMP/LICENSE"
+  mkdir -p docs
+  (set -C; cat "$AIBOOT_TMP/AGENTS.md" > AGENTS.md)
+  (set -C; cat "$AIBOOT_TMP/capabilities.md" > docs/aiboot-capabilities.md)
+  (set -C; cat "$AIBOOT_TMP/LICENSE" > docs/aiboot-LICENSE)
+)
 ```
 
-This command leaves an existing file or symlink untouched. If it stops, merge in
-your editor. On Windows, copy `AIBoot\scaffold\AGENTS.md` to your project's root
-with your file manager; merge first if the destination already has instructions.
-Keep AIBoot's [MIT notice](LICENSE) when redistributing its content, while retaining
-your product's own license.
+</details>
 
-A minimal destination looks like this:
+<details>
+<summary><strong>Windows — PowerShell direct download</strong></summary>
+
+```powershell
+& {
+  $ErrorActionPreference = 'Stop'
+  $aibootRef = 'main' # Or an exact commit for reproducible setup.
+  $aibootBase = "https://raw.githubusercontent.com/Liu-2026/AIBoot/$aibootRef"
+  $aibootFiles = @(
+    @{ Source = 'scaffold/AGENTS.md'; Target = 'AGENTS.md' },
+    @{ Source = 'scaffold/capabilities.md'; Target = 'docs/aiboot-capabilities.md' },
+    @{ Source = 'LICENSE'; Target = 'docs/aiboot-LICENSE' }
+  )
+  foreach ($aibootFile in $aibootFiles) {
+    if (Get-Item -LiteralPath $aibootFile.Target -Force -ErrorAction SilentlyContinue) {
+      throw "Already exists; merge manually: $($aibootFile.Target)"
+    }
+  }
+  $aibootTemp = Join-Path ([IO.Path]::GetTempPath()) ([Guid]::NewGuid().ToString())
+  New-Item -ItemType Directory -Path $aibootTemp | Out-Null
+  try {
+    foreach ($aibootFile in $aibootFiles) {
+      $aibootStaged = Join-Path $aibootTemp ([IO.Path]::GetFileName($aibootFile.Target))
+      Invoke-WebRequest -Uri "$aibootBase/$($aibootFile.Source)" -OutFile $aibootStaged
+    }
+    New-Item -ItemType Directory -Path 'docs' -Force | Out-Null
+    foreach ($aibootFile in $aibootFiles) {
+      $aibootStaged = Join-Path $aibootTemp ([IO.Path]::GetFileName($aibootFile.Target))
+      [IO.File]::Copy($aibootStaged, [IO.Path]::GetFullPath($aibootFile.Target), $false)
+    }
+  } finally {
+    Remove-Item -LiteralPath $aibootTemp -Recurse -Force
+  }
+}
+```
+
+</details>
+
+Both snippets stage all downloads before copying and preserve existing destination
+files. If a destination is occupied, use the manual route below to review and merge.
+They do not change your product's Git remote, history, settings, or license.
+For a fixed source revision, replace `main` with an exact commit in the snippet.
+
+**Manual download or an existing project:** obtain
+[the core](https://raw.githubusercontent.com/Liu-2026/AIBoot/main/scaffold/AGENTS.md),
+[the capability reference](https://raw.githubusercontent.com/Liu-2026/AIBoot/main/scaffold/capabilities.md),
+and [the MIT notice](https://raw.githubusercontent.com/Liu-2026/AIBoot/main/LICENSE).
+Save or merge them at the following paths, preserving existing project conventions:
 
 ```text
 MyProject/
-├── AGENTS.md          # AIBoot guidance + your project conventions
-├── .git/              # your product's own Git history
-└── ...                # application files created for the selected stack
+├── AGENTS.md                    # core guidance + your project conventions
+├── docs/
+│   ├── aiboot-capabilities.md    # task-specific routes, read on demand
+│   └── aiboot-LICENSE            # MIT notice for the copied AIBoot content
+└── ...                          # your application and its own Git history
 ```
 
-Cloning AIBoot obtains the source kit. Its distributable core is under `scaffold/`;
-copy or merge it into your own project's native entry for application development.
-Use the AIBoot checkout itself when contributing to AIBoot.
+The core already routes specialized tasks to `docs/aiboot-capabilities.md`.
+If you choose a different location or merge into an older instruction entry, add
+its actual path as described in [capability setup](docs/setup.md#capability-discovery).
+
+**Simplified setup:** copy only `AGENTS.md` when the core guidance is sufficient.
+Its built-in capability triggers and public sources remain available without the
+curated reference. The two-file setup above is recommended for broader task guidance.
+
+**Contributing or inspecting the source:** run
+`git clone https://github.com/Liu-2026/AIBoot.git`, or
+[download the ZIP](https://github.com/Liu-2026/AIBoot/archive/refs/heads/main.zip).
+Clone obtains the source kit; application development uses your own project directory.
+[See local-copy setup](docs/setup.md#inspect-and-add-the-core).
 
 ### 3. Open your tool in the destination project
 
@@ -257,20 +331,16 @@ Your tool handles installation, loading, connections, permissions, and execution
 AIBoot adds selection and failure-recovery guidance; installing a reference file
 alone does not connect a service or install third-party Skills.
 
-### Add the optional capability reference
+### Use the included capability reference
 
-The default core already supplies discovery guidance. For ten curated routes,
-copy `scaffold/capabilities.md` into a suitable location such as
-`docs/aiboot-capabilities.md`, merging if that path is occupied. Then add this
-plain pointer to your effective project instruction entry:
+The recommended setup includes `docs/aiboot-capabilities.md`, with ten curated
+routes and selection/failure guidance. The core directs the agent to relevant
+guidance when a specialized task appears. Installed Skills and connected tools remain preferred.
+Routine edits and settled choices do not require rereading the catalog.
 
-```text
-When a task needs a specialized capability or existing methods leave a useful gap,
-consult the matching section of docs/aiboot-capabilities.md on demand.
-```
-
-Keep it as an on-demand reference. See [capability setup](docs/setup.md#optional-capability-discovery)
-for the guarded copy command, selection, and access guidance.
+If the file lives elsewhere, record its actual path in the effective instruction
+entry. The reference stays on demand; a Claude `@` import would instead load it as
+instructions. [Capability setup](docs/setup.md#capability-discovery).
 
 ## Update AIBoot in your project
 
@@ -279,7 +349,7 @@ for the guarded copy command, selection, and access guidance.
 3. Record the source version or commit in the normal Git change description.
 4. Refresh the tool's project session and inspect the effective instruction entry.
 
-Review optional references in the same way. To remove AIBoot, remove its identified
+Update the paired capability reference through the same review. To remove AIBoot, remove its identified
 guidance or import while retaining useful project facts and local modifications.
 [Update and removal guide](docs/setup.md#update-and-remove).
 
@@ -287,7 +357,7 @@ guidance or import while retaining useful project facts and local modifications.
 
 ```text
 scaffold/AGENTS.md            # shared engineering playbook
-scaffold/capabilities.md      # optional specialized capability routes
+scaffold/capabilities.md      # recommended routes, read on demand
 adapters/                    # native loading guides
 docs/setup.md                # detailed setup and lifecycle guide
 docs/prompts.md              # planning, building, resuming, and delivery prompts

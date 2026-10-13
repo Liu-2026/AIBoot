@@ -1,12 +1,15 @@
-<!-- AIBoot optional reference | v0.2.0-alpha.7 | MIT | Experimental -->
+<!-- AIBoot optional reference | v0.2.0-alpha.8 | MIT | Experimental -->
 # Find a capability for the task
 
 Consult this reference when a task needs a specialized capability, existing methods
 leave a useful gap, or the user requests a recommendation. The need can follow
 from the work itself; it need not wait for an implementation failure. Read the
 selection guidance and matching section; unrelated entries need no inspection.
-Keep this file out of always-loaded instructions and automatic imports. The core
-has its own discovery entry points and works without it. Execution stays native.
+The recommended setup pairs this reference with the core at
+`docs/aiboot-capabilities.md` in the destination project. The core supplies its
+task-triggered entry. Keep this file out of always-loaded instructions and
+automatic imports. Simplified core-only setup retains its own discovery entry
+points. Execution stays native.
 
 These are source-reviewed starting points as of **2026-10-13**, not a complete
 directory, a quality ranking, or tested integrations. Upstream contents and
