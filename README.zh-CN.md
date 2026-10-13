@@ -205,11 +205,11 @@ AIBoot 通过普通任务请求提供指导，可以先要求规划，也可以�
 范围或技术选择需要讨论时，可以这样开始：
 
 ```text
-Plan an inventory tool for our operations team.
-We need item search, stock adjustments, and CSV export.
-Compare suitable existing solutions and choose an approach for our actual needs.
-Record scope, acceptance examples, consequential decisions, milestones, and dependencies.
-Plan only; do not implement or deploy yet.
+为我们的运营团队规划一个库存管理工具。
+需要支持商品搜索、库存调整和 CSV 导出。
+比较适用的成熟方案，根据实际需求选择实现方式。
+记录开发范围、验收示例、重要决策、里程碑和任务依赖。
+本阶段只做规划，暂时不要实施或部署。
 ```
 
 结果应说明已约定需求、相关选型和下一步工作。
@@ -218,10 +218,10 @@ Plan only; do not implement or deploy yet.
 ### 根据已确认计划开发
 
 ```text
-Implement the agreed scope in [plan or issue reference].
-Check the current project state and finish the work in integrated stages.
-Keep requirements connected to tasks, implementation, and completion evidence.
-Update affected progress and decisions; make blockers or scope changes explicit.
+按照[计划文档或 Issue 引用]实施已确认的开发范围。
+核对项目当前状态，分阶段完成实现与集成。
+将需求关联到任务、具体实现和完成证据。
+更新受影响的进度与决策，明确说明阻塞问题或范围变化。
 ```
 
 将方括号替换为真实文档路径或 Issue 引用。对于实质项目，核心要求保留持久的项目知识，
@@ -234,10 +234,10 @@ Update affected progress and decisions; make blockers or scope changes explicit.
 ### 新会话继续，或交接给协作者
 
 ```text
-Continue from [current project record or issue reference].
-Reconcile recorded progress with actual files and applicable evidence.
-Complete the next agreed milestone and update the affected project records.
-Leave the next action clear for the following session or collaborator.
+根据[当前项目记录或 Issue 引用]继续开发。
+将记录中的进度与实际文件和仍然适用的证据核对一致。
+完成下一个已确认的里程碑，更新受影响的项目记录。
+为后续会话或协作者留下明确的下一步行动。
 ```
 
 优先使用工具的原生会话恢复。更换工具或协作者时，也可以依靠同一份持久记录与实际生效的指令入口。
@@ -247,9 +247,9 @@ Leave the next action clear for the following session or collaborator.
 ### 完成一个局部修改
 
 ```text
-Change [the specific behavior or text] to [the requested result].
-Preserve unrelated behavior and existing conventions.
-Review the affected change and perform relevant verification.
+将[具体行为或文字]修改为[期望结果]。
+保留无关行为，遵循项目已有约定。
+审查本次变更，并执行与变更相关的验证。
 ```
 
 普通修改沿用已有上下文并聚焦当前工作。变更确实影响需求或架构时，再展开相应研究与规划。
@@ -257,10 +257,10 @@ Review the affected change and perform relevant verification.
 ### 审查交付，或准备维护
 
 ```text
-Review this milestone against the agreed requirements.
-Connect each important requirement to its implementation and evidence.
-Check usable run instructions and relevant integration or migration needs.
-Report remaining, blocked, deferred, and unverified work accurately.
+按照已确认的需求审查本次里程碑。
+将每项重要需求关联到具体实现和完成证据。
+核对运行说明是否可用，以及相关集成或迁移是否得到处理。
+如实说明剩余、阻塞、延期和未验证的工作。
 ```
 
 重构时说明已经出现的问题与需要保持的行为；核心指导 AI 关注受影响接口、依赖模块，
