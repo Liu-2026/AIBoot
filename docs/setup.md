@@ -2,15 +2,31 @@
 
 [English overview](../README.md) · [中文概览](../README.zh-CN.md)
 
-The kit is `v0.2.0-alpha.6`: one default English core, loaded by your coding tool.
+The kit is `v0.2.0-alpha.7`: one default English core, loaded by your coding tool.
 Existing project conventions, native plans, checks, and appropriate installed
 Skills continue to supply the rest of the workflow.
+
+## Choose your project directory
+
+For your own software, create or open its own project directory and Git repository.
+Keep AIBoot as the source of the engineering guidance; your product owns its code,
+README, history, license, and project records. A framework starter can supply the
+application structure after the agent has chosen an appropriate stack.
+
+Cloning AIBoot obtains the kit and its references. Its distributable core lives
+at `scaffold/AGENTS.md`; add that content to your destination project's native
+entry to activate the workflow there. Developing AIBoot itself uses the kit
+repository and its local maintainer guidance.
 
 ## Inspect and add the core
 
 Get a local copy using your Git host's clone or Download ZIP action. Run this
 POSIX-shell example in the destination project on macOS/Linux. On Windows, copy
 the same file using your file manager or editor.
+
+You can also [download only the core](https://raw.githubusercontent.com/Liu-2026/AIBoot/main/scaffold/AGENTS.md)
+and save its content as `AGENTS.md` in the destination project root. Merge with an
+existing entry instead of replacing it. The optional reference can be added later.
 
 Check existing instructions before copying. For a destination without `AGENTS.md`:
 
@@ -29,6 +45,12 @@ Follow one guide for the tool's actual loading behavior:
 - [Codex](../adapters/codex/README.md).
 - [Cursor](../adapters/cursor/README.md).
 - [Claude Code](../adapters/claude-code/README.md).
+
+Open the destination directory in the coding tool, use its effective native entry,
+and start a fresh session. If a higher-priority override is active, merge applicable
+guidance into that entry as described by the adapter. Use
+[the task prompts](prompts.md) to start planning, implement, resume, review, or
+prepare a delivery through ordinary language.
 
 ## Check the addition
 
@@ -82,6 +104,28 @@ require interface decisions, dependency sequencing, broader regression checks,
 and a migration/rollback plan. Routine help-text edits use established context
 and relevant checks without repeating project design.
 
+## Keep requirements connected to delivery
+
+In the existing plan, issue, or project record, connect each important requirement
+to its source/agreed status, observable acceptance, tasks and dependencies,
+implementation references, and verification evidence or gaps. Short labels and
+links are enough; a separate traceability document is optional.
+
+For example, a room-booking requirement can point to its agreed overlap rule,
+the booking-validation task, the implementation module, and the relevant result.
+If that result has not been checked, its status remains implemented-but-unverified.
+At delivery, reconcile all in-scope requirements; retain missing, deferred,
+blocked, and unverified items instead of counting them as complete.
+
+Scope changes update affected decisions, interfaces, tasks, and acceptance. Keep
+the reason and current agreement in the existing record. Progress can be reported
+as verified milestone outcomes and counts by task state; percentages need a clear
+basis and must account for tasks that differ in size and uncertainty.
+
+When the user excludes testing, record that omission and distinguish the delivered
+implementation from verified acceptance. The workflow follows the user's stage
+and authorization; omitted checks do not acquire a passing result.
+
 ## Continue work across sessions
 
 Multi-stage projects need durable goals, significant decisions, an actionable
@@ -89,6 +133,10 @@ plan, and current progress. Use native recovery alongside existing plans, issues
 or project documents. If no suitable durable entry exists, keep one concise
 project note in the normal document location. There is no required filename or
 document bundle; sufficient existing records need no duplicate ledger.
+
+If needed, add a short path or issue reference to the native instruction entry
+so later sessions can locate these records. Keep the details in their own source
+and read them when relevant.
 
 Keep the current goal, verified results and evidence links, unfinished work,
 blockers, next action, and consequential constraints or decision references.
@@ -107,6 +155,13 @@ Version shared records according to the destination project's policies.
 AIBoot's own ignored maintenance documents and scripts belong to this repository.
 The setup copies the core, not AIBoot's `.gitignore`. Your project's shared plans,
 conventions, and decisions follow its own collaboration and versioning needs.
+
+For work across modules or native subagents, establish interface contracts,
+ownership of shared changes, and integration order. Use authorized native
+collaboration and project records to coordinate dependency changes. Review the
+combined result against the same requirements. For maintenance or refactoring,
+address behavior compatibility and actual data migration/rollback needs before
+changing dependent implementations.
 
 ## Optional capability discovery
 
@@ -184,6 +239,6 @@ useful local changes. Remove obsolete calls or references from your own guidance
 Keep project facts you have already written. Apply the new core through the same
 reviewed update process, then describe a real task directly to your tool.
 
-The source checker validates this repository's files and copy guard. Native agent
-behavior, cross-tool coexistence, and remote/cloud use have separate evidence
-requirements; they are not established by a successful file copy.
+File copying and source-format checks establish different facts from useful agent
+behavior. Native loading, task outcomes, cross-tool coexistence, and remote/cloud
+use each need evidence appropriate to the actual environment.

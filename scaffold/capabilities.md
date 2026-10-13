@@ -1,4 +1,4 @@
-<!-- AIBoot optional reference | v0.2.0-alpha.6 | MIT | Experimental -->
+<!-- AIBoot optional reference | v0.2.0-alpha.7 | MIT | Experimental -->
 # Find a capability for the task
 
 Consult this reference when a task needs a specialized capability, existing methods

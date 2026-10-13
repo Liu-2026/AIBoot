@@ -15,6 +15,9 @@ against `main`. Existing commit messages use a short type and purpose, such as
   capabilities or current guidance are insufficient.
 - Change distributable content in `scaffold/`; keep adapters focused on loading.
 - Keep prompts in English and both READMEs aligned on setup, claims, and limitations.
+- Keep requirements connected to the delivered result and its evidence. Reuse
+  normal project records; distinguish substantial work from routine edits when
+  proposing documentation or progress rules.
 - For trigger changes, include a relevant and an irrelevant task. Evaluate the
   outcome rather than enforcing one wording, stack, or sequence.
 - Remove rules that no longer help. Avoid universal policies derived from one
@@ -40,6 +43,8 @@ For loading changes, check the affected native entry and preserve existing proje
 instructions. For behavior comparisons, use fresh independent sessions with
 identical task inputs and tools; keep evaluator notes out of the executing agent's
 context. Report the checks actually performed and their results.
+Respect any user-imposed activity boundary and report omitted checks as not run;
+an omission does not establish a passing result.
 
 The public kit contains the scaffold and its usage documentation. Keep internal
 planning, maintainer scripts, test fixtures, and validation records local and

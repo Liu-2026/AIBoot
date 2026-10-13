@@ -3,67 +3,80 @@
 </p>
 
 <p align="center">
-  <strong>Give your AI coding agent an engineering mindset.</strong><br>
-  Clear direction · Smart reuse · Focused delivery
+  <strong>Build beyond the first demo.</strong><br>
+  Your AI agent’s engineering playbook — from idea to delivery.
 </p>
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-2f855a" alt="MIT License"></a>
-  <a href="docs/setup.md"><img src="https://img.shields.io/badge/version-v0.2.0--alpha.6-2563eb" alt="v0.2.0-alpha.6"></a>
+  <a href="docs/setup.md"><img src="https://img.shields.io/badge/version-v0.2.0--alpha.7-2563eb" alt="v0.2.0-alpha.7"></a>
 </p>
 
 <p align="center">
   <strong>English</strong> · <a href="README.zh-CN.md">简体中文</a><br>
-  <a href="#quick-start">Quick start</a> · <a href="#the-right-capability-for-the-task">Skills & tools</a> · <a href="docs/setup.md">Setup guide</a> · <a href="CONTRIBUTING.md">Contribute</a>
+  <a href="#quick-start">Quick start</a> · <a href="#how-to-use-aiboot">Usage & prompts</a> · <a href="#skills-and-tools-at-the-right-moment">Skills & tools</a> · <a href="CONTRIBUTING.md">Contribute</a>
 </p>
 
 ---
 
 # AIBoot
 
-**From a clear idea to a thoughtfully built project.**
+**Turn ambitious ideas into thoughtfully engineered software.**
 
-AIBoot brings practical engineering guidance to **Codex, Cursor, and Claude Code**.
-It helps your agent clarify the goal, choose proven building blocks, plan the next
-useful step, and deliver with relevant verification. **Project outcomes come first:**
-analysis, design, documentation, and testing follow what successful delivery needs.
+AIBoot brings a shared engineering playbook to **Codex, Cursor, and Claude Code**:
+clarify requirements, research proven solutions, choose architecture, plan the
+work, build integrated features, and prepare a usable delivery. It gives your
+agent guidance for the whole journey, including future sessions and maintenance.
 
-**One core file. Your favorite tools. Your own stack.** Add AIBoot to your project's
-native instruction entry and describe what you want to build. Its English guidance
-works with your coding tool's plans, Skills, MCP integrations, session recovery,
-and permitted subagents.
+**One core file. Your favorite tools. Your own stack.** Add the English guidance
+to your project's native instruction entry, then describe the outcome you want.
+Your coding tool provides execution, planning, Skills, MCP connections, session
+recovery, and permitted collaboration. AIBoot connects those capabilities to
+practical engineering decisions.
+
+**Great results come first.** Invest in the analysis, design, documentation, and
+verification the product needs. Keep architecture and process grounded in actual
+users, constraints, and business value.
 
 ## Why AIBoot
 
-Good projects begin with good decisions. AIBoot puts those decisions within reach
-of your AI coding workflow:
+- **Start with direction.** Turn an idea into a clear scope, observable acceptance,
+  and an actionable development plan.
+- **Stand on proven foundations.** Consider maintained libraries, existing
+  applications, official starters, and specialized capabilities before custom work.
+- **Design for your reality.** Shape frontend, backend, data, and deployment around
+  the product's actual needs and the team's ability to maintain it.
+- **Connect requirements to delivery.** Keep important requirements linked to
+  tasks, implementation, and completion evidence in normal project records.
+- **Keep momentum.** Carry goals, decisions, verified progress, and the next action
+  into the following session or collaborator's work.
+- **Bring in the right expertise.** Match interface design, SDK integration,
+  specialist artifacts, and external services to relevant native Skills and tools.
+- **Build for what comes next.** Address integration, review, usable instructions,
+  compatibility, and consequential maintenance needs as the project evolves.
 
-- **A clear starting point.** Turn an idea into a concrete goal, a sensible first
-  milestone, and actionable development work.
-- **An instinct for reuse.** Consider mature libraries, existing applications,
-  official starters, and specialized capabilities before choosing an implementation.
-- **Architecture that fits.** Shape frontend, backend, data, deployment, and quality
-  work around the project's users and actual needs.
-- **The right capability at the right time.** Match design, documentation,
-  integrations, and specialist tasks to suitable native Skills and tools.
-- **Context with purpose.** Read specialized references on demand and keep the
-  project facts that help future decisions and handoffs.
-- **A clear finish.** Verify the relevant result and give the user an accurate,
-  useful account of what was delivered.
-
-Use it to guide a personal script, a company tool, a customer product, or the next
-project you are starting from scratch.
+Use it for a personal script, a company tool, a customer product, or a substantial
+project with multiple modules and milestones.
 
 ## Quick start
 
-### 1. Get AIBoot
+### 1. Choose your own project directory
 
-Clone with `git clone https://github.com/Liu-2026/AIBoot.git`, or
+For a new product, create a separate directory and initialize Git when appropriate
+with `git init`. For existing software, open its current project root.
+AIBoot supplies engineering guidance; the application's structure comes from the
+chosen stack, an appropriate starter, and the project's needs.
+
+### 2. Add the core guidance
+
+**The simplest route:** [download the core file](https://raw.githubusercontent.com/Liu-2026/AIBoot/main/scaffold/AGENTS.md)
+and save it as **`AGENTS.md` in your project root**. If that file already exists,
+merge the applicable guidance in your editor, preserving project conventions.
+
+To obtain all reference material, run
+`git clone https://github.com/Liu-2026/AIBoot.git`, or
 [download the ZIP](https://github.com/Liu-2026/AIBoot/archive/refs/heads/main.zip).
-
-### 2. Add the core
-
-In your destination project, run:
+Then run this in the destination project on macOS/Linux, replacing the source path:
 
 ```sh
 AIBOOT_SOURCE="/absolute/path/to/AIBoot"
@@ -71,120 +84,230 @@ test ! -e AGENTS.md && test ! -L AGENTS.md && \
   cp "$AIBOOT_SOURCE/scaffold/AGENTS.md" AGENTS.md
 ```
 
-The macOS/Linux command preserves existing files and symlinks. If your project
-already has instructions, merge the useful guidance in your editor. On Windows,
-copy the same file manually. See the [setup guide](docs/setup.md) for details.
+This command leaves an existing file or symlink untouched. If it stops, merge in
+your editor. On Windows, copy `AIBoot\scaffold\AGENTS.md` to your project's root
+with your file manager; merge first if the destination already has instructions.
+Keep AIBoot's [MIT notice](LICENSE) when redistributing its content, while retaining
+your product's own license.
 
-Choose your tool's loading guide:
-
-- **[Codex](adapters/codex/README.md)** — project `AGENTS.md`.
-- **[Cursor](adapters/cursor/README.md)** — project `AGENTS.md`.
-- **[Claude Code](adapters/claude-code/README.md)** — direct `AGENTS.md` loading where
-  supported, or a project-local `CLAUDE.md` import.
-
-### 3. Describe the outcome
+A minimal destination looks like this:
 
 ```text
-Build a small booking app for our team.
-Staff should view, create, and cancel room bookings; prevent overlapping bookings.
-Consider suitable existing solutions, libraries, and native Skills or tools.
-Plan the work, then implement the agreed scope in verified steps.
-Provide usable run instructions and evidence of the completed result.
+MyProject/
+├── AGENTS.md          # AIBoot guidance + your project conventions
+├── .git/              # your product's own Git history
+└── ...                # application files created for the selected stack
 ```
 
-For research and planning, add “plan only; do not implement yet.” To continue an
-existing project, describe the next result and point to the current project facts.
+Cloning AIBoot obtains the source kit. Its distributable core is under `scaffold/`;
+copy or merge it into your own project's native entry for application development.
+Use the AIBoot checkout itself when contributing to AIBoot.
 
-## Keep momentum across sessions
+### 3. Open your tool in the destination project
 
-**A clear next step, even when the session or collaborator changes.**
-
-AIBoot guides the agent to use native recovery and existing plans, issues, or
-project documents. Multi-stage work keeps durable goals, decisions, plans, and
-progress; a concise shared note can hold the goal, verified results, remaining
-work, blockers, next action, and key decision references.
-
-Updates follow meaningful milestones and handoffs. Resumed work checks current
-files and applicable evidence, while development conventions grow from your
-stack and team agreements. [See the continuity guide](docs/setup.md#continue-work-across-sessions).
-
-## A workflow from idea to delivery
-
-The core guides substantial work through six connected decisions:
-
-1. **Define the outcome:** users, workflows, scope, constraints, and acceptance examples.
-2. **Investigate and choose:** existing solutions, dependencies, native capabilities, and consequential tradeoffs.
-3. **Design and plan:** module boundaries, interfaces, data, milestones, task dependencies, and completion evidence.
-4. **Build and integrate:** reviewable working units, explicit progress, and integration with the project.
-5. **Verify and review:** relevant business behavior, boundary cases, integrations, and the actual changes.
-6. **Deliver and continue:** usable setup, verified results, remaining work, and the next milestone.
-
-A first working slice advances the full project goal. Multi-stage projects keep a
-durable brief, decisions, plan, and progress in suitable existing records; a shared
-entry can hold them together. Routine edits use established context and focused
-checks. [Explore the workflow guide](docs/setup.md#follow-the-development-workflow).
-
-## The right capability for the task
-
-**Describe the work. Let the guidance help your agent find the right approach.**
-
-The default core includes task triggers and discovery sources. At project start,
-a material task change, or a specialized need, it guides the agent to consider
-appropriate installed Skills, connected tools, and existing project methods.
-
-- **Interface design:** an appropriate design Skill, such as Impeccable, can help
-  shape a distinctive visual direction around your product and its users.
-- **SDK and API work:** a connected Context7 tool or official versioned docs can
-  provide relevant implementation references.
-- **External services:** existing integrations and native plugin/MCP discovery
-  can connect the task to the right service capability.
-- **Everyday changes:** focused implementation and relevant checks keep small
-  edits straightforward.
-
-When a useful gap remains, upstream projects, skills.sh, and public MCP metadata
-provide discovery candidates. Organization sources guide private integrations.
-Your coding tool handles loading, authorization, and execution.
-
-The optional [capability reference](scaffold/capabilities.md) provides **ten focused
-routes** across documentation, UI, React, browser verification, Postgres, mobile,
-Azure SDKs, security review, document artifacts, and service integrations.
-[Add it when useful](docs/setup.md#optional-capability-discovery) and read the relevant
-section on demand.
-
-## Built for the way you work
-
-- **Starting a new app:** clarify the first useful flow and select a fitting stack.
-- **Building an internal tool:** explore suitable existing products and libraries.
-- **Creating a branded page:** connect real content and references to a design Skill.
-- **Making a small change:** keep implementation and verification focused on the task.
-- **Resuming a project:** continue from current facts and applicable evidence.
-- **Preparing for maintenance:** favor readable code, clear boundaries, and useful
-  project knowledge as the application evolves.
-
-## Small core, broad reach
+- **Codex:** use root `AGENTS.md`, then start a fresh project session. If an
+  `AGENTS.override.md` is active, follow its precedence and merge guidance into
+  the effective entry. [Codex loading guide](adapters/codex/README.md).
+- **Cursor:** use root `AGENTS.md`, open the project, and start a fresh Agent
+  session. Keep scoped project rules for their existing purpose and avoid a
+  second always-loaded copy of the core. [Cursor loading guide](adapters/cursor/README.md).
+- **Claude Code:** use direct `AGENTS.md` loading in supported configurations.
+  Where `CLAUDE.md` is the effective entry, preserve its content and add a
+  project-local import: [Claude Code loading guide](adapters/claude-code/README.md).
 
 ```text
-scaffold/AGENTS.md            # core engineering guidance
-scaffold/capabilities.md      # optional task-specific capability reference
-adapters/                    # native loading guides for each tool
-docs/setup.md                # setup, migration, updates, and removal
+@AGENTS.md
+```
+
+The import above belongs in the effective `CLAUDE.md`, relative to that file.
+Inspect your tool's loaded instructions or context view where available. Loading
+follows the tool's version, settings, and instruction precedence.
+
+### 4. Describe the project and start
+
+You can speak in your preferred language. Here is a ready-to-use English example:
+
+```text
+Build a room-booking app for our small team.
+Staff should view, create, and cancel bookings; overlapping bookings are disallowed.
+Use a simple deployment we can maintain. Consider suitable existing solutions,
+libraries, and native Skills or tools before choosing the implementation.
+Establish the project brief and actionable plan in suitable project records.
+Implement the agreed scope in working stages. Deliver usable run instructions
+and an accurate account of verification and remaining work.
+```
+
+Provide real users, workflows, required behavior, constraints, and useful examples.
+References or an existing plan help when you have them. AIBoot's guidance applies
+through ordinary tasks; you can ask for planning first or authorize implementation.
+
+## How to use AIBoot
+
+### Research and plan before implementation
+
+Use this when scope or technology choices need discussion:
+
+```text
+Plan an inventory tool for our operations team.
+We need item search, stock adjustments, and CSV export.
+Compare suitable existing solutions and choose an approach for our actual needs.
+Record scope, acceptance examples, consequential decisions, milestones, and dependencies.
+Plan only; do not implement or deploy yet.
+```
+
+The result should identify the agreed requirements, relevant choices, and next
+work. Confirm the important choices, then ask the agent to implement the agreed plan.
+
+### Develop against an agreed plan
+
+```text
+Implement the agreed scope in [plan or issue reference].
+Check the current project state and finish the work in integrated stages.
+Keep requirements connected to tasks, implementation, and completion evidence.
+Update affected progress and decisions; make blockers or scope changes explicit.
+```
+
+For substantial work, the core calls for durable project knowledge. Existing
+issues, plans, or documents can hold it. When the project has no suitable entry,
+one concise project note can initially hold the brief, decisions, plan, and
+progress. Split it when size, ownership, or use makes separate records worthwhile.
+
+For example, a project may use `docs/project.md` for those facts and keep a short
+pointer in `AGENTS.md`. That is a possible layout, not a required filename or a
+fixed document package. Shared records follow your project's Git policies.
+
+### Resume in a new session or hand off
+
+```text
+Continue from [current project record or issue reference].
+Reconcile recorded progress with actual files and applicable evidence.
+Complete the next agreed milestone and update the affected project records.
+Leave the next action clear for the following session or collaborator.
+```
+
+Use native session recovery where available. A different tool or collaborator
+can use the same durable records and effective instruction entry. At a milestone,
+record meaningful changes, blockers, and the next action; unchanged facts need no
+repeated report. [Continuity guide](docs/setup.md#continue-work-across-sessions).
+
+### Make a small change
+
+```text
+Change [the specific behavior or text] to [the requested result].
+Preserve unrelated behavior and existing conventions.
+Review the affected change and perform relevant verification.
+```
+
+Routine edits use existing context and focused work. Requirements research and
+architecture planning apply when the change actually needs them.
+
+### Review delivery or prepare maintenance
+
+```text
+Review this milestone against the agreed requirements.
+Connect each important requirement to its implementation and evidence.
+Check usable run instructions and relevant integration or migration needs.
+Report remaining, blocked, deferred, and unverified work accurately.
+```
+
+For refactoring, describe the demonstrated problem and expected behavior to
+preserve. The core guides attention to affected interfaces, dependent modules,
+and actual migration or rollback needs. Publishing or deploying follows your
+existing authorization. See [more task prompts](docs/prompts.md).
+
+## A connected engineering workflow
+
+**Requirements → Research → Design & plan → Build & integrate → Verify & review → Deliver & continue**
+
+For each important requirement, preserve its source and agreed status, an
+observable acceptance example, related tasks and dependencies, implementation
+references, and evidence or verification gaps. Use links and short labels in
+existing records. Before closing a milestone, reconcile the full agreed scope.
+
+For example: **“Prevent overlapping bookings” → booking-conflict task → booking
+module → relevant behavior evidence.** A change to the rule updates the affected
+plan, interfaces, and evidence. Progress reflects outcomes and current states,
+with the basis of estimates made clear.
+
+For multiple modules or permitted native subagents, agree interface contracts,
+ownership of shared changes, and integration order. Keep responsibility for the
+combined result explicit. Your coding tool manages collaboration and execution.
+[Workflow guide](docs/setup.md#follow-the-development-workflow).
+
+## Skills and tools at the right moment
+
+**Describe the work. Put specialized capabilities to work where they matter.**
+
+The core includes task triggers and discovery sources. At project start, a
+material task change, or a specialized need, it guides your agent to match the
+work to installed Skills, connected tools, and existing project methods.
+
+- **Interface design:** suitable guidance such as Impeccable can help turn users,
+  content, and visual references into a distinctive product direction.
+- **SDKs and APIs:** a connected Context7 tool or official versioned documentation
+  supplies relevant implementation references.
+- **External services:** connected integrations and native plugin/MCP discovery
+  help locate task-relevant service capabilities.
+- **Specialist work:** select appropriate database, browser, security-review,
+  mobile, and document-artifact methods for the actual need.
+
+If a useful gap remains, focused upstream search, skills.sh, and public MCP
+metadata supply candidates; private integrations use organization sources.
+Your tool handles installation, loading, connections, permissions, and execution.
+AIBoot adds selection and failure-recovery guidance; installing a reference file
+alone does not connect a service or install third-party Skills.
+
+### Add the optional capability reference
+
+The default core already supplies discovery guidance. For ten curated routes,
+copy `scaffold/capabilities.md` into a suitable location such as
+`docs/aiboot-capabilities.md`, merging if that path is occupied. Then add this
+plain pointer to your effective project instruction entry:
+
+```text
+When a task needs a specialized capability or existing methods leave a useful gap,
+consult the matching section of docs/aiboot-capabilities.md on demand.
+```
+
+Keep it as an on-demand reference. See [capability setup](docs/setup.md#optional-capability-discovery)
+for the guarded copy command, selection, and access guidance.
+
+## Update AIBoot in your project
+
+1. Obtain the new core and compare it with your installed version and local edits.
+2. Merge the applicable changes, preserving your project conventions and records.
+3. Record the source version or commit in the normal Git change description.
+4. Refresh the tool's project session and inspect the effective instruction entry.
+
+Review optional references in the same way. To remove AIBoot, remove its identified
+guidance or import while retaining useful project facts and local modifications.
+[Update and removal guide](docs/setup.md#update-and-remove).
+
+## Inside the kit
+
+```text
+scaffold/AGENTS.md            # shared engineering playbook
+scaffold/capabilities.md      # optional specialized capability routes
+adapters/                    # native loading guides
+docs/setup.md                # detailed setup and lifecycle guide
+docs/prompts.md              # planning, building, resuming, and delivery prompts
 docs/assets/aiboot-hero.png   # project artwork
 ```
 
-AIBoot stays in the instruction layer. Your project keeps its technical stack,
-application layout, tests, CI, and existing documentation. Native tools provide
-execution; the core supplies a shared engineering approach.
+The core stays portable across stacks. Your product owns its application layout,
+dependencies, tests, CI, documentation, and release process.
 
 ## Build with us
 
-AIBoot is **open source under MIT**. Bring your workflow, share a practical use
-case, improve a capability route, or help make the guidance clearer.
+AIBoot is **open source under MIT**. Share a practical workflow, improve a
+capability route, or help make the guidance sharper and easier to use.
 
-- [Contributing](CONTRIBUTING.md) — Git workflow and contribution guidance.
-- [Setup guide](docs/setup.md) — installation and project lifecycle.
-- [Issues](https://github.com/Liu-2026/AIBoot/issues) — ideas, feedback, and useful examples.
+- [Contributing](CONTRIBUTING.md) — contribution and Git workflow.
+- [Setup guide](docs/setup.md) — project setup and lifecycle.
+- [Task prompts](docs/prompts.md) — ready-to-adapt starting points.
+- [Issues](https://github.com/Liu-2026/AIBoot/issues) — feedback, ideas, and examples.
 
-**Like the approach? Give AIBoot a Star and help more developers build with intent.**
+**Give AIBoot a Star and help bring better engineering habits to AI development.**
 
 ## License
 
