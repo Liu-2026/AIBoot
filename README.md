@@ -3,60 +3,67 @@
 </p>
 
 <p align="center">
-  <strong>Engineering judgment for AI coding agents.</strong><br>
-  Clear scope · Proven building blocks · Evidence of completion
+  <strong>Give your AI coding agent an engineering mindset.</strong><br>
+  Clear direction · Smart reuse · Focused delivery
+</p>
+
+<p align="center">
+  <a href="https://github.com/Liu-2026/AIBoot/actions/workflows/validate.yml"><img src="https://github.com/Liu-2026/AIBoot/actions/workflows/validate.yml/badge.svg" alt="Source checks"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-2f855a" alt="MIT License"></a>
+  <a href="docs/setup.md"><img src="https://img.shields.io/badge/version-v0.2.0--alpha.4-2563eb" alt="v0.2.0-alpha.4"></a>
 </p>
 
 <p align="center">
   <strong>English</strong> · <a href="README.zh-CN.md">简体中文</a><br>
-  <a href="#quick-start">Quick start</a> · <a href="docs/setup.md">Setup guide</a> · <a href="#status-and-next-work">Status</a> · <a href="CONTRIBUTING.md">Contribute</a>
+  <a href="#quick-start">Quick start</a> · <a href="#the-right-capability-for-the-task">Skills & tools</a> · <a href="docs/setup.md">Setup guide</a> · <a href="CONTRIBUTING.md">Contribute</a>
 </p>
 
 ---
 
 # AIBoot
 
-AIBoot is a lightweight engineering starter for **AI coding agents**. It helps
-an agent start from a clear goal, consider existing solutions, and choose
-implementation and verification work that fit the actual project.
+**From a clear idea to a thoughtfully built project.**
 
-**One core file to add. Your coding tool handles execution.** The kit contains
-English engineering guidance and local loading guides for **Codex, Cursor, and
-Claude Code**. Planning, permissions, session recovery, and permitted subagents
-stay with your tool; your project keeps its own stack and layout.
+AIBoot brings practical engineering guidance to **Codex, Cursor, and Claude Code**.
+It helps your agent clarify the goal, choose proven building blocks, plan the next
+useful step, and deliver with relevant verification.
 
-**Experimental alpha · `v0.2.0-alpha.4` · MIT.** Source checks and documented copy
-guards are tested. Native discovery and behavior validation have different scopes;
-see [status](#status-and-next-work). No measured token savings are claimed.
+**One core file. Your favorite tools. Your own stack.** Add AIBoot to your project's
+native instruction entry and describe what you want to build. Its English guidance
+works with your coding tool's plans, Skills, MCP integrations, session recovery,
+and permitted subagents.
 
 ## Why AIBoot
 
-An agent can produce a detailed plan while quietly adding work you never needed:
-a frontend for a CLI, a custom implementation of a mature library, or an
-infrastructure stack justified only by the phrase “production-ready.”
+Good projects begin with good decisions. AIBoot puts those decisions within reach
+of your AI coding workflow:
 
-AIBoot puts a few engineering decisions at the center of the work:
+- **A clear starting point.** Turn an idea into a concrete goal, a sensible first
+  milestone, and actionable development work.
+- **An instinct for reuse.** Consider mature libraries, existing applications,
+  official starters, and specialized capabilities before choosing an implementation.
+- **Architecture that fits.** Shape frontend, backend, data, deployment, and quality
+  work around the project's users and actual needs.
+- **The right capability at the right time.** Match design, documentation,
+  integrations, and specialist tasks to suitable native Skills and tools.
+- **Context with purpose.** Read specialized references on demand and keep the
+  project facts that help future decisions and handoffs.
+- **A clear finish.** Verify the relevant result and give the user an accurate,
+  useful account of what was delivered.
 
-- **Start from the outcome.** Separate requirements, assumptions, and suggestions.
-  A plan does not turn every suggestion into a promise.
-- **Reuse before building.** Consider existing projects, maintained libraries,
-  official starters, and available capabilities. Match specialized work to suitable
-  Skills and tools; discover additions when existing methods leave a useful gap.
-- **Make complexity earn its place.** Architecture and quality targets need a
-  current reason. Existing platforms and real failure impacts count as reasons.
-- **Plan the next useful result.** Detail nearby work; expand future work as facts
-  emerge. Keep records when they help a decision or a handoff.
-- **Finish with evidence.** Run relevant checks, report what actually happened,
-  and stop when the requested result is demonstrated.
-
-The agent can choose a sensible path for a script, an internal app, a customer
-product, or a project with substantial constraints.
+Use it to guide a personal script, a company tool, a customer product, or the next
+project you are starting from scratch.
 
 ## Quick start
 
+### 1. Get AIBoot
+
 Clone with `git clone https://github.com/Liu-2026/AIBoot.git`, or
 [download the ZIP](https://github.com/Liu-2026/AIBoot/archive/refs/heads/main.zip).
-In your destination project, add the core:
+
+### 2. Add the core
+
+In your destination project, run:
 
 ```sh
 AIBOOT_SOURCE="/absolute/path/to/AIBoot"
@@ -64,134 +71,93 @@ test ! -e AGENTS.md && test ! -L AGENTS.md && \
   cp "$AIBOOT_SOURCE/scaffold/AGENTS.md" AGENTS.md
 ```
 
-This POSIX-shell example leaves an existing file or symlink untouched. If project
-instructions already exist, merge useful guidance in your editor. On Windows,
-copy the same file manually. The [setup guide](docs/setup.md) covers local changes,
-license notices, updates, and removal.
+The macOS/Linux command preserves existing files and symlinks. If your project
+already has instructions, merge the useful guidance in your editor. On Windows,
+copy the same file manually. See the [setup guide](docs/setup.md) for details.
 
-Choose your tool’s loading guide:
+Choose your tool's loading guide:
 
-- [Codex](adapters/codex/README.md): project `AGENTS.md`.
-- [Cursor](adapters/cursor/README.md): project `AGENTS.md`.
-- [Claude Code](adapters/claude-code/README.md): direct `AGENTS.md` loading where
+- **[Codex](adapters/codex/README.md)** — project `AGENTS.md`.
+- **[Cursor](adapters/cursor/README.md)** — project `AGENTS.md`.
+- **[Claude Code](adapters/claude-code/README.md)** — direct `AGENTS.md` loading where
   supported, or a project-local `CLAUDE.md` import.
 
-Then describe the result you need:
+### 3. Describe the outcome
 
 ```text
-Build a local CLI that summarizes CSV expenses by category.
-It is for my own use; no web interface is needed.
-Start with the first working result and show how you verified it.
+Build a small booking app for our team.
+Start with the simplest useful booking flow.
+Consider suitable existing libraries and native Skills or tools.
+Implement the first working result and show how you verified it.
 ```
 
-For a planning stage, say “plan only; do not implement yet.” To resume work,
-reference the current task and existing facts. A clear task can proceed directly;
-starting a new session does not require a new project plan.
+For research and planning, add “plan only; do not implement yet.” To continue an
+existing project, describe the next result and point to the current project facts.
 
-## Use your existing capabilities
+## The right capability for the task
 
-The default core includes **task triggers and discovery sources**. At project
-start, a material task change, or a new specialized need, it guides the agent to
-match the work to suitable native capabilities. You can describe the outcome
-without knowing a Skill name or adding a second file.
+**Describe the work. Let the guidance help your agent find the right approach.**
 
-Actual UI work can use an appropriate design skill; an SDK question can use a
-connected Context7 tool or official versioned docs. External account access can
-use an existing integration or native plugin/MCP discovery. A help-text edit can
-proceed directly. Installed Skills, connected tools, and sufficient project methods
-come first. For remaining gaps, focused upstream search, skills.sh, and public MCP
-metadata provide candidates; private integrations use organization sources.
+The default core includes task triggers and discovery sources. At project start,
+a material task change, or a specialized need, it guides the agent to consider
+appropriate installed Skills, connected tools, and existing project methods.
 
-The optional [capability reference](scaffold/capabilities.md) adds ten routes,
-covering documentation, UI, React, browser verification, Postgres, mobile, Azure
-SDKs, security review, document artifacts, and service integrations. It explains
-fit, limits, and failure paths and is read through the
-[optional setup](docs/setup.md#optional-capability-discovery) on demand.
+- **Interface design:** an appropriate design Skill, such as Impeccable, can help
+  shape a distinctive visual direction around your product and its users.
+- **SDK and API work:** a connected Context7 tool or official versioned docs can
+  provide relevant implementation references.
+- **External services:** existing integrations and native plugin/MCP discovery
+  can connect the task to the right service capability.
+- **Everyday changes:** focused implementation and relevant checks keep small
+  edits straightforward.
 
-A directory listing does not prove working access. The guidance calls for relevant
-use and honest fallback when discovery or execution fails. AIBoot bundles no
-third-party Skills, runs no installer, and manages no plugins. These are engineering
-instructions; automatic selection and third-party effectiveness still need evidence.
+When a useful gap remains, upstream projects, skills.sh, and public MCP metadata
+provide discovery candidates. Organization sources guide private integrations.
+Your coding tool handles loading, authorization, and execution.
 
-The previous startup and selection Skills overlapped with the core and had no
-demonstrated incremental benefit. They remain removed from distribution. Existing
-alpha users can follow the [migration notes](docs/setup.md#migrate-from-the-first-alpha).
+The optional [capability reference](scaffold/capabilities.md) provides **ten focused
+routes** across documentation, UI, React, browser verification, Postgres, mobile,
+Azure SDKs, security review, document artifacts, and service integrations.
+[Add it when useful](docs/setup.md#optional-capability-discovery) and read the relevant
+section on demand.
 
-## What it looks like in practice
+## Built for the way you work
 
-These are intended behaviors, not benchmark results:
+- **Starting a new app:** clarify the first useful flow and select a fitting stack.
+- **Building an internal tool:** explore suitable existing products and libraries.
+- **Creating a branded page:** connect real content and references to a design Skill.
+- **Making a small change:** keep implementation and verification focused on the task.
+- **Resuming a project:** continue from current facts and applicable evidence.
+- **Preparing for maintenance:** favor readable code, clear boundaries, and useful
+  project knowledge as the application evolves.
 
-- **A small booking app:** begin with a useful booking flow. Add deployment
-  complexity when actual hosting or operations requires it.
-- **An internal help desk:** investigate a suitable existing application before
-  committing to a custom ticketing system.
-- **A branded page:** use real content, references, and an appropriate installed
-  design skill. Visual direction follows the product and its users.
-- **A help-text edit:** make the scoped change and check relevant behavior.
-- **A task resumed later:** use current facts and applicable evidence, then
-  continue. Save context that future work would otherwise lose.
-
-## A small, portable architecture
+## Small core, broad reach
 
 ```text
-scaffold/AGENTS.md            # single source of engineering guidance
-scaffold/capabilities.md      # optional task-specific upstream references
-adapters/                    # tool-specific loading details
-docs/setup.md                # shared setup, migration, updates, and removal
-docs/assets/aiboot-hero.png   # README artwork
+scaffold/AGENTS.md            # core engineering guidance
+scaffold/capabilities.md      # optional task-specific capability reference
+adapters/                    # native loading guides for each tool
+docs/setup.md                # setup, migration, updates, and removal
+docs/validation.md           # engineering validation notes
+docs/assets/aiboot-hero.png   # project artwork
 ```
 
-Add the core to your tool’s native instruction entry. Plans, issues, test commands,
-CI, application structure, and useful project facts stay in their existing homes.
-AIBoot adds no service or application dependency.
+AIBoot stays in the instruction layer. Your project keeps its technical stack,
+application layout, tests, CI, and existing documentation. Native tools provide
+execution; the core supplies a shared engineering approach.
 
-## Status and next work
+## Build with us
 
-The current alpha keeps one default core with task-based capability matching,
-direct source entry points, and failure guidance. Native Skills and tools handle
-execution; the detailed reference remains optional. Startup and selection guidance
-stay consolidated, with no separate facts template or discovery service.
-The latest revision favors sufficient verification alternatives and judges tool
-findings against confirmed project constraints.
+AIBoot is **open source under MIT**. Bring your workflow, share a practical use
+case, improve a capability route, or help make the guidance clearer.
 
-Codex CLI `0.162.0-alpha.17.2` input previews confirmed that the complete core appears
-once after copying and is absent before copying and after removal. This checks
-native instruction discovery without a model run. The optional reference body
-remained absent even with the file present and a plain instruction pointer.
-Read-only native plugin search and Context7 documentation queries succeeded in a
-local maintainer check. This verifies those available paths, not automatic task
-routing by itself.
+- [Contributing](CONTRIBUTING.md) — Git workflow and local checks.
+- [Setup guide](docs/setup.md) — installation and project lifecycle.
+- [Engineering notes](docs/validation.md) — validation scope and observations.
+- [Issues](https://github.com/Liu-2026/AIBoot/issues) — ideas, feedback, and useful examples.
 
-A small local `alpha.3` behavior trial compared fresh native and core sessions on
-the same inventory-viewer task. Both selected an installed design skill and their
-pages passed 11 independent browser checks. On identical working-app copies, both
-made a one-line placeholder edit and passed three focused browser checks without
-reading a design Skill. The core's greenfield session reached the evaluation time
-limit during verification after browser-tool failures; its page passed, but a clean
-delivery was not demonstrated within that run. This prompted the narrower fallback
-guidance. A single task does not establish a general benefit or Token reduction.
-An `alpha.4` completion run then preserved the existing app, reused its saved
-browser evidence, checked logic and local serving, and repaired verification
-documentation. It reported fresh browser checks as unavailable. This recovery
-trial had a different starting state and is not a greenfield performance comparison.
-
-Cursor and Claude Code loading, broader capability selection, private-service
-failure handling, cross-tool coexistence, and remote/cloud use remain untested.
-Source checks validate publication files and copy guards, not engineering decisions
-or measured token savings.
-
-- [Setup guide](docs/setup.md) covers migration, updates, and removal.
-- [Contributing](CONTRIBUTING.md) explains the Git/PR workflow and local checks.
-
-## Help shape the kit
-
-Share a small, reproducible task where the instructions helped, added unnecessary
-work, or failed to preserve scope. Include your tool and version, and distinguish
-observed behavior from an expectation. Removing an unhelpful rule is a useful
-contribution.
-
-If this approach fits how you build, **star AIBoot** and help others discover it.
+**Like the approach? Give AIBoot a Star and help more developers build with intent.**
 
 ## License
 
-[MIT](LICENSE). The README uses original artwork generated for AIBoot.
+[MIT](LICENSE). Project artwork was created for AIBoot.

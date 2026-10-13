@@ -3,51 +3,57 @@
 </p>
 
 <p align="center">
-  <strong>帮 AI 把项目做对，做得恰到好处。</strong><br>
-  明确范围 · 复用成熟方案 · 用证据交付
+  <strong>让 AI 懂工程，把想法做成好项目。</strong><br>
+  方向清晰 · 善用成熟方案 · 专注交付
+</p>
+
+<p align="center">
+  <a href="https://github.com/Liu-2026/AIBoot/actions/workflows/validate.yml"><img src="https://github.com/Liu-2026/AIBoot/actions/workflows/validate.yml/badge.svg" alt="来源检查"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-2f855a" alt="MIT 许可证"></a>
+  <a href="docs/setup.md"><img src="https://img.shields.io/badge/version-v0.2.0--alpha.4-2563eb" alt="v0.2.0-alpha.4"></a>
 </p>
 
 <p align="center">
   <a href="README.md">English</a> · <strong>简体中文</strong><br>
-  <a href="#快速开始">快速开始</a> · <a href="docs/setup.md">接入指南</a> · <a href="#当前状态与下一步">当前状态</a> · <a href="CONTRIBUTING.md">参与贡献</a>
+  <a href="#快速开始">快速开始</a> · <a href="#让合适的能力出现在合适的任务中">Skills 与工具</a> · <a href="docs/setup.md">接入指南</a> · <a href="CONTRIBUTING.md">参与贡献</a>
 </p>
 
 ---
 
 # AIBoot
 
-AIBoot 是一套面向 **AI 开发工具**的轻量工程基座。它帮助 AI 从明确的目标开始，
-先判断哪些能力可以复用，再选择与实际项目相称的实现、规划和验证工作。
+**从一个清晰的想法，开始一个经过认真思考的项目。**
 
-**接入一份核心文件，由开发工具负责执行。** 套件提供英文工程指导，以及
-**Codex、Cursor、Claude Code** 的本地加载说明。规划、权限、会话恢复和允许使用的
-子 Agent 沿用工具原生能力；业务项目保留自己的技术栈和目录。
+AIBoot 为 **Codex、Cursor、Claude Code** 带来实用的工程开发指导：帮助 AI 理清目标、
+选择成熟方案、规划下一步，并通过与任务相关的验证完成交付。
 
-**实验性 Alpha · `v0.2.0-alpha.4` · MIT。** 已检查来源文件和文档中的复制保护逻辑。
-原生发现与行为验证的范围分别说明，见[当前状态](#当前状态与下一步)；尚无实测 Token 节省结论。
+**一份核心文件，沿用你喜欢的工具和技术栈。** 将 AIBoot 加入项目的原生指令入口，
+然后描述你想完成的事情。英文核心指导与开发工具的规划、Skills、MCP 集成、
+会话恢复和允许使用的子 Agent 协同工作。
 
-## 为什么需要 AIBoot
+## 为什么选择 AIBoot
 
-AI 可以写出很详细的开发计划，同时悄悄加上原本没有必要的工作：为命令行工具增加
-前端、重新实现成熟第三方库，或者仅凭“生产级”三个字搭建复杂基础设施。
+好项目，始于好决策。AIBoot 将这些关键判断融入 AI 开发工作流：
 
-AIBoot 将几个关键工程判断放在开发工作的中心：
+- **清晰的起点。** 将想法转化为明确目标、合理的首个里程碑与可执行的开发任务。
+- **善用成熟方案。** 在选择实现方式前，考虑成熟依赖、已有应用、官方脚手架和专项能力。
+- **恰到好处的架构。** 根据用户与真实需求安排前端、后端、数据、部署和质量工作。
+- **按场景选择能力。** 将设计、文档、服务集成和专业任务与适用的原生 Skills、工具匹配。
+- **有价值的上下文。** 按需阅读专项参考，保留有助于后续判断和交接的项目事实。
+- **明确的交付结果。** 验证相关成果，向用户准确、清晰地说明完成了什么。
 
-- **从结果出发。** 区分已确认需求、工作假设和可选建议。建议写进计划后，依然是建议。
-- **先判断复用。** 考虑现有工程、成熟依赖、官方脚手架和已有能力。
-  将专项工作与适用的 Skills、工具匹配；现有方法仍有实质缺口时，再发现补充能力。
-- **复杂度要有当前理由。** 架构与质量指标来自实际需求；已有平台和真实失败影响也属于依据。
-- **先做好下一项有用成果。** 近期计划可执行，远期工作随事实增加再展开。记录应帮助决策或交接。
-- **以证据完成交付。** 执行相关检查，如实说明结果，目标得到验证后结束本次工作。
-
-个人脚本、公司内部应用、面向客户的产品，以及有明确复杂约束的工程，都可以选择
-不同的合理路径。
+从个人脚本、公司内部工具到面向客户的产品，AIBoot 都可以为下一次从零开发提供工程指导。
 
 ## 快速开始
 
+### 1. 获取 AIBoot
+
 运行 `git clone https://github.com/Liu-2026/AIBoot.git`，或
-[下载 ZIP](https://github.com/Liu-2026/AIBoot/archive/refs/heads/main.zip) 获取本仓库。
-在目标项目目录中加入核心规则：
+[下载 ZIP](https://github.com/Liu-2026/AIBoot/archive/refs/heads/main.zip)。
+
+### 2. 加入核心指导
+
+在目标项目目录中运行：
 
 ```sh
 AIBOOT_SOURCE="/absolute/path/to/AIBoot"
@@ -55,109 +61,84 @@ test ! -e AGENTS.md && test ! -L AGENTS.md && \
   cp "$AIBOOT_SOURCE/scaffold/AGENTS.md" AGENTS.md
 ```
 
-这是适用于 macOS/Linux 的 POSIX Shell 示例，已有文件或符号链接不会被覆盖。
-已有项目规范时，请在编辑器中合并有用的指导；Windows 可以手动复制同一个文件。
-[接入指南](docs/setup.md)说明了用户修改保留、许可声明、更新和移除方式。
+macOS/Linux 示例会保留已有文件与符号链接。项目已有规范时，在编辑器中合并适用指导；
+Windows 用户可以手动复制同一个文件。详见[接入指南](docs/setup.md)。
 
 选择当前工具的加载说明：
 
-- [Codex](adapters/codex/README.md)：项目 `AGENTS.md`。
-- [Cursor](adapters/cursor/README.md)：项目 `AGENTS.md`。
-- [Claude Code](adapters/claude-code/README.md)：支持时直接加载 `AGENTS.md`，
-  否则从项目内的 `CLAUDE.md` 导入。
+- **[Codex](adapters/codex/README.md)** — 项目 `AGENTS.md`。
+- **[Cursor](adapters/cursor/README.md)** — 项目 `AGENTS.md`。
+- **[Claude Code](adapters/claude-code/README.md)** — 支持时直接加载 `AGENTS.md`，
+  或通过项目内的 `CLAUDE.md` 导入。
 
-随后描述真实任务。可以使用英文提示词：
+### 3. 描述你想完成的结果
 
-```text
-Build a local CLI that summarizes CSV expenses by category.
-It is for my own use; no web interface is needed.
-Start with the first working result and show how you verified it.
-```
-
-讨论阶段可以补充 “plan only; do not implement yet”。接续工作时引用当前任务和已有事实。
-目标清楚的任务可以直接推进；开启新会话不要求重新制定项目计划。
-
-## 使用已有能力
-
-默认核心已经包含**任务触发条件和发现入口**。新项目、任务性质明显变化或出现专项需求时，
-它指导 AI 将工作与适用的原生能力匹配。用户可以直接描述目标，无需先知道 Skill 名称，
-也无需添加第二份文件。
-
-真实界面工作可以使用适用的设计 Skill；SDK 问题可以使用已连接的 Context7 或官方版本文档；
-外部账户访问可以使用已有集成或原生插件／MCP 发现。修改帮助文字可以直接完成。
-先用已安装 Skills、已连接工具和足够的项目方法；仍有缺口时，再通过定向上游查询、
-skills.sh 或公开 MCP 元数据寻找候选。私有集成使用组织来源。
-
-可选的[能力参考](scaffold/capabilities.md)进一步提供十类路线，覆盖文档查询、界面设计、
-React、浏览器验证、Postgres、移动端、Azure SDK、安全审查、文档产物和服务集成。
-它说明适用范围、限制与失败路径，通过[可选接入](docs/setup.md#optional-capability-discovery)
-按需阅读。
-
-目录收录不代表访问可用。指导要求通过相关使用确认能力，发现或执行失败时如实降级。
-AIBoot 不打包第三方 Skills、不执行安装器，也不接管插件管理。这些属于工程指导；
-自动选择效果和第三方能力的实际收益仍需验证。
-
-此前的启动与选型 Skill 与核心重叠，尚无独立增益证据，继续从分发内容中移除。
-已接入首版 Alpha 的项目可参考[迁移说明](docs/setup.md#migrate-from-the-first-alpha)。
-
-## 实际使用场景
-
-以下是期望行为，尚未作为基准测试结果：
-
-- **小公司的预约应用：** 从能完成预约的流程开始，实际托管或运维要求出现时再引入部署复杂度。
-- **内部工单系统：** 在决定自行开发前，研究适合的已有应用。
-- **有品牌要求的页面：** 结合真实内容、参考与适用的已安装设计 Skill，确定符合产品和用户的视觉方向。
-- **修改一句 CLI 帮助文字：** 完成局部修改，检查相关行为。
-- **跨会话接续任务：** 使用当前事实和仍然适用的证据继续工作，保存后续确实需要的上下文。
-
-## 精简、可移植的架构
+可以直接使用英文提示词：
 
 ```text
-scaffold/AGENTS.md            # 工程指导的单一来源
-scaffold/capabilities.md      # 可选的场景与上游能力参考
-adapters/                    # 各工具的加载差异
-docs/setup.md                # 共享接入、迁移、更新与退出说明
-docs/assets/aiboot-hero.png   # README 主视觉
+Build a small booking app for our team.
+Start with the simplest useful booking flow.
+Consider suitable existing libraries and native Skills or tools.
+Implement the first working result and show how you verified it.
 ```
 
-核心接入工具的原生指导入口。计划、Issue、测试命令、CI、业务目录和必要项目事实
-沿用已有位置。AIBoot 不增加服务或业务运行时依赖。
+研究与规划阶段，补充 “plan only; do not implement yet”。接续已有项目时，
+描述下一项成果，并引用当前项目事实。
 
-## 当前状态与下一步
+## 让合适的能力出现在合适的任务中
 
-当前 Alpha 保留一份默认核心，补入基于任务的能力匹配、直接来源入口和失败指导。
-Skills 与工具沿用宿主执行；详细参考继续可选。启动与选型指导收敛在核心，
-不增加独立事实模板或发现服务。
-本次修订强调选择足够的替代验证方法，并根据已确认项目约束判断工具反馈。
+**描述任务，让工程指导帮助 AI 找到合适的实现路径。**
 
-Codex CLI `0.162.0-alpha.17.2` 的输入预览确认：复制后完整核心出现一次，复制前与
-移除后均不出现。可选参考文件存在且加入普通路径指针时，其正文仍未进入输入。
-这验证了原生指令发现，没有运行模型。本地维护检查中，原生插件目录查询和 Context7
-文档调用成功，说明这些已有路径可用；这些调用本身仍不能证明自动任务路由。
+默认核心包含任务触发条件与发现入口。新项目、任务性质明显变化或出现专项需求时，
+它指导 AI 考虑适用的已安装 Skills、已连接工具和已有项目方法。
 
-一次本地 `alpha.3` 小项目试验，用独立原生与核心会话执行相同的库存查看页任务。
-两组都选择了已安装设计 Skill，产出的页面均通过 11 项独立浏览器检查。
-在相同的完成应用副本中，两组都只改了一行占位文字，通过 3 项局部浏览器检查，
-没有重新读取设计 Skill。核心组从零开发的会话在浏览器工具失败后的验证阶段达到
-评估运行时限；页面通过检查，但该次运行未完成完整交付，因此收紧了回退指导。
-单个任务尚不能证明普遍增益或 Token 节省。
-随后 `alpha.4` 收尾会话保留了已有应用，复用保存的浏览器证据，检查逻辑与本地服务，
-补全验证文档，并将新浏览器检查如实标为不可用。收尾起点不同，不属于从零开发性能对照。
+- **界面设计：** Impeccable 等适用的设计 Skill，可结合产品与用户形成鲜明的视觉方向。
+- **SDK 与 API 开发：** 已连接的 Context7 或官方版本文档，可提供相关实现参考。
+- **外部服务集成：** 已有集成与原生插件／MCP 发现，可帮助任务对接适用的服务能力。
+- **日常修改：** 聚焦实现与相关检查，让小任务保持简洁顺畅。
 
-Cursor、Claude Code 的实际加载、更广泛的能力选择、私有服务失败处理、多工具共存
-和远程／云端使用仍未经实测。
-来源检查只验证分发文件和复制保护，不证明工程判断效果或 Token 节省。
+需要补充能力时，可通过上游项目、skills.sh 和公开 MCP 元数据寻找候选；
+私有集成使用组织来源。加载、授权与执行由开发工具负责。
 
-- [接入指南](docs/setup.md)说明迁移、更新和移除方式。
-- [贡献指南](CONTRIBUTING.md)说明 Git／PR 工作方式和本地检查。
+可选的[能力参考](scaffold/capabilities.md)提供**十类专项路线**，覆盖文档查询、界面设计、
+React、浏览器验证、Postgres、移动端、Azure SDK、安全审查、文档产物与服务集成。
+[按需接入](docs/setup.md#optional-capability-discovery)，阅读与当前任务相关的部分。
 
-## 一起完善这套方法
+## 贴合真实开发方式
 
-欢迎提交可复现的小任务：哪些指导帮助了交付，哪些增加了无用工作，哪些没能控制范围。
-请说明工具与版本，并区分实际观察和预期表现。删除无效规则同样是有价值的贡献。
+- **开始一个新应用：** 明确首个有用流程，选择匹配的技术栈。
+- **开发内部工具：** 研究适合的已有产品与成熟依赖。
+- **制作品牌页面：** 将真实内容和视觉参考交给适用的设计 Skill。
+- **完成局部修改：** 让实现与验证聚焦当前任务。
+- **跨会话继续开发：** 从当前事实和仍然适用的证据继续推进。
+- **为后续维护做好准备：** 随项目演进，重视清晰代码、合理边界与有用的项目知识。
 
-如果这套思路适合你的开发方式，欢迎 **Star AIBoot**，让更多开发者发现它。
+## 轻量核心，广泛适用
+
+```text
+scaffold/AGENTS.md            # 核心工程指导
+scaffold/capabilities.md      # 可选的专项能力参考
+adapters/                    # 各开发工具的原生加载说明
+docs/setup.md                # 接入、迁移、更新与移除
+docs/validation.md           # 工程验证记录
+docs/assets/aiboot-hero.png   # 项目主视觉
+```
+
+AIBoot 工作在指令层。技术栈、业务目录、测试、CI 与现有文档由项目自己掌握；
+原生工具负责执行，核心指导提供一致的工程思考方式。
+
+## 一起把好方法做得更好
+
+AIBoot 采用 **MIT 开源许可**。欢迎分享你的工作流与实际案例、完善能力路线，
+或让工程指导更清晰、更好用。
+
+- [贡献指南](CONTRIBUTING.md) — Git 工作方式与本地检查。
+- [接入指南](docs/setup.md) — 接入方式与项目生命周期。
+- [工程记录](docs/validation.md) — 验证范围与实际观察。
+- [Issues](https://github.com/Liu-2026/AIBoot/issues) — 建议、反馈与实用案例。
+
+**喜欢这套思路？为 AIBoot 点一颗 Star，让更多开发者把想法做成好项目。**
 
 ## 开源许可
 
-[MIT](LICENSE)。README 使用为 AIBoot 原创生成的视觉素材。
+[MIT](LICENSE)。项目视觉素材为 AIBoot 原创制作。
