@@ -9,7 +9,7 @@
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-2f855a" alt="MIT 许可证"></a>
-  <a href="docs/setup.md"><img src="https://img.shields.io/badge/version-v0.2.0--alpha.4-2563eb" alt="v0.2.0-alpha.4"></a>
+  <a href="docs/setup.md"><img src="https://img.shields.io/badge/version-v0.2.0--alpha.5-2563eb" alt="v0.2.0-alpha.5"></a>
 </p>
 
 <p align="center">
@@ -83,6 +83,17 @@ Implement the first working result and show how you verified it.
 
 研究与规划阶段，补充 “plan only; do not implement yet”。接续已有项目时，
 描述下一项成果，并引用当前项目事实。
+
+## 跨会话，持续推进
+
+**更换会话或协作者，仍然知道下一步做什么。**
+
+AIBoot 指导 AI 使用原生恢复能力与已有计划、Issue 或项目文档。
+关键状态需要持久保存时，保留一份简短记录，涵盖目标、已验证成果、未完成事项、
+阻塞、下一步和关键决策引用。
+
+记录随里程碑与交接更新；接续开发时，核对实际文件状态与仍然适用的验证证据。
+开发约定则从技术栈和团队共识中逐步形成。[查看连续开发说明](docs/setup.md#continue-work-across-sessions)。
 
 ## 让合适的能力出现在合适的任务中
 

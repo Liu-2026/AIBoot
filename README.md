@@ -9,7 +9,7 @@
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-2f855a" alt="MIT License"></a>
-  <a href="docs/setup.md"><img src="https://img.shields.io/badge/version-v0.2.0--alpha.4-2563eb" alt="v0.2.0-alpha.4"></a>
+  <a href="docs/setup.md"><img src="https://img.shields.io/badge/version-v0.2.0--alpha.5-2563eb" alt="v0.2.0-alpha.5"></a>
 </p>
 
 <p align="center">
@@ -92,6 +92,19 @@ Implement the first working result and show how you verified it.
 
 For research and planning, add “plan only; do not implement yet.” To continue an
 existing project, describe the next result and point to the current project facts.
+
+## Keep momentum across sessions
+
+**A clear next step, even when the session or collaborator changes.**
+
+AIBoot guides the agent to use native recovery and existing plans, issues, or
+project documents. When essential state needs a durable home, it helps keep a
+short status note with the goal, verified results, remaining work, blockers,
+next action, and key decision references.
+
+Updates follow meaningful milestones and handoffs. Resumed work checks current
+files and applicable evidence, while development conventions grow from your
+stack and team agreements. [See the continuity guide](docs/setup.md#continue-work-across-sessions).
 
 ## The right capability for the task
 

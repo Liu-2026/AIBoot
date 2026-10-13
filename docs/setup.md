@@ -2,7 +2,7 @@
 
 [English overview](../README.md) · [中文概览](../README.zh-CN.md)
 
-The kit is `v0.2.0-alpha.4`: one default English core, loaded by your coding tool.
+The kit is `v0.2.0-alpha.5`: one default English core, loaded by your coding tool.
 Existing project conventions, native plans, checks, and appropriate installed
 Skills continue to supply the rest of the workflow.
 
@@ -42,6 +42,32 @@ Keep facts in existing project documents; save missing facts only when future wo
 would otherwise lose them. No prescribed facts template or extra task ledger is
 needed. When redistributing AIBoot content, retain its MIT notice in existing
 third-party notices or a copy of [LICENSE](../LICENSE), preserving your own license.
+
+## Continue work across sessions
+
+The core includes continuity guidance. Use native recovery and existing durable
+plans, issues, or project documents when they contain enough information to
+continue. If future sessions or collaborators would otherwise lose necessary
+state and no suitable entry exists, keep one short status note in the project's
+normal document location. There is no required filename or document bundle.
+
+Keep the current goal, verified results and evidence links, unfinished work,
+blockers, next action, and consequential constraints or decision references.
+Update the affected facts at a milestone, material goal change, blocker, or
+handoff. Routine edits can rely on existing task records and Git changes.
+
+At resumption, read the relevant state and inspect the actual Git/worktree and
+applicable evidence. Correct stale status; distinguish implemented work from
+verified completion. Repeat checks when their evidence no longer applies.
+
+Build coding and testing conventions from existing stack configuration and team
+agreements. Put missing agreed conventions in existing project guidance; add
+architecture or decision documents when future work needs their explanation.
+Version shared records according to the destination project's policies.
+
+AIBoot's own ignored maintenance documents and scripts belong to this repository.
+The setup copies the core, not AIBoot's `.gitignore`. Your project's shared plans,
+conventions, and decisions follow its own collaboration and versioning needs.
 
 ## Optional capability discovery
 
