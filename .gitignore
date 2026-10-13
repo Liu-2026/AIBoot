@@ -1,0 +1,27 @@
+# Local operating system and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local credentials and tool settings
+.env
+.env.*
+!.env.example
+.claude/settings.local.json
+.codex/config.toml
+
+# Python check artifacts and scratch evaluation outputs
+__pycache__/
+*.py[cod]
+.venv/
+.cache/
+tmp/
+
+# Local planning, design, evaluation, and repository preparation
+/AGENTS.md
+/docs/design.md
+/docs/development-plan.md
+/docs/repository.md
+/docs/assets/README.md
+/evals/
